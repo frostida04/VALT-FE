@@ -1,0 +1,86 @@
+import { useNavigate } from 'react-router-dom';
+
+const MainCpn = () => {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        // Navigate to "/about" when the button is clicked
+        navigate('/invite');
+      };
+  
+
+    return(
+        <div className="w-full flex flex-col items-center sm:p-10 md:p-10 lg:py-10 lg:px-[152px] gap-8 rounded-2xl bg-darkGrayColor">
+            <div className="w-full flex flex-col items-center justify-center rounded-3xl bg-darkgrayBackgroundColor sm:hidden md:hidden   p-6 gap-3">
+                <img src="/assets/img/wallet_icon.png" className="w-[56px] h-[56px]" alt="wallet_icon"></img>
+                <div className="text-2xl leading-[50px] font-semibold text-whiteTextColor">My wallet:</div>
+                <div className="text-[42px] leading-[50px] font-semibold text-greenColor">3000</div>
+            </div>
+            <div className="flex w-full overflow-x-auto hide-scrollbar">
+                <div className="flex relavite flex-row justify-between items-center gap-6 sm:flex-col lg:flex-row  md:flex-row w-full overflow-x-hidde md:min-w-[800px] sm:min-w-[200px] ">
+                    
+                    <button className="relative w-[256px] sm:w-full gap-3 h-[462px] bg-darkgrayBackgroundColor rounded-3xl flex items-center  flex-col p-6" onClick={handleClick}>
+                        <img src="/assets/img/general_entrance.png" className="w-[48px] h-[48px]"></img>
+                        <p className="text-[24px] leading-[30px] font-semibold text-whiteTextColor">General</p>
+                        <p className="text-[24px] leading-[30px] font-semibold text-whiteTextColor">entrance</p>
+                        
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">All options included in</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">the STANDARD ticket</p>
+                        
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">Lunch box (2 days)</p>
+                        
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">Video recordings of speeches</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">(Uminers and KuCoin stages)</p>
+                        <div className="absolute bottom-[20px] text-[26px] leading-[24px] font-semibold text-greenColor">750</div>
+                    </button>
+
+                    <button className="relative w-[256px] sm:w-full gap-3 h-[462px] bg-darkgrayBackgroundColor rounded-3xl flex items-center  flex-col p-6" onClick={handleClick}>
+                        <img src="/assets/img/vip_icon.png" className="w-[48px] h-[48px]"></img>
+                        <p className="text-[24px] leading-[30px] font-semibold text-whiteTextColor">VIP entrance</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">VIP entrance</p>
+                        
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">All options included in</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">the STANDARD ticket</p>
+                        
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">Lunch box (2 days)</p>
+                        
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">Video recordings of speeches</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">(Uminers and KuCoin stages)</p>
+                        <div className="absolute bottom-[20px] text-[26px] leading-[24px] font-semibold text-greenColor">750</div>
+                    </button>
+
+                    <button className="relative w-[256px] sm:w-full gap-3 h-[462px] bg-darkgrayBackgroundColor rounded-3xl flex items-center  flex-col p-6" onClick={handleClick}>
+                        <img src="/assets/img/vip_icon2.png" className="w-[48px] h-[48px]"></img>
+                        <p className="text-[24px] leading-[30px] font-semibold text-whiteTextColor">VIP entrance</p>
+                            <p className="text-[24px] leading-[30px] font-semibold text-whiteTextColor">(BULL)</p>
+                            <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">VIP entrance (BULL)</p>
+                        
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">All options included in</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">the STANDARD ticket</p>
+                        
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">Lunch box (2 days)</p>
+                        
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">Video recordings of speeches</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">(Uminers and KuCoin stages)</p>
+                        <div className="absolute bottom-[20px] text-[26px] leading-[24px] font-semibold text-greenColor">3000
+                            <span className="text-whiteTextColor"> × 2</span>
+                        </div>
+                    </button>
+
+                </div>
+                
+            </div>
+            <p className="text-3xl font-medium text-whiteTextColor sm:hidden md:block lg:hidden">Total $VALT</p>
+            <div className="w-full  flex flex-row justify-center items-center gap-[18px] md:mt-[-36px]">
+                <button><img src="/assets/img/minus_icon.png" className="w-[62px] h-[62px]"></img></button>
+                <img src="/assets/img/wallet_icon.png" className="w-[62px] h-[62px] lg:block hidden "></img>
+                <p className="md:text-[96px] sm:text-[56px] font-bold text-greenColor">3000</p>
+                <button><img src="/assets/img/plus_icon.png" className="w-[62px] h-[62px]"></img></button>
+            </div >
+
+            <button className="w-[184px] py-[16px] px-[24px] rounded-[90px] bg-greenColor flex justify-center items-center text-[16px] font-bold color-dark" >CHANGE</button>
+
+        </div>
+    )
+}
+
+export default MainCpn

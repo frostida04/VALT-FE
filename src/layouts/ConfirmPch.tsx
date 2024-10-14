@@ -1,0 +1,68 @@
+import Pchase_Con from "../Elements/Pchase_Con"; 
+import { useNavigate } from 'react-router-dom';
+const ConfirmInv = () => {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+      // Navigate to "/about" when the button is clicked
+      navigate('/complete');
+    };
+    return (
+        <div className="flex w-full py-6">
+            <div className="flex w-full py-5 lg:px-40">
+                <div className="flex flex-col w-full bg-darkDarkColor rounded-md p-10">
+                    <div className=" flex w-full justify-center items-center p-6">
+                        <p className="text-[36px] leading-[24px] sm:text-[28px] font-Poppins text-whiteTextColor">Purchase completed</p>
+                    </div>
+                    <Pchase_Con />
+                    <div className="flex flex-col w-full justify-center items-center pt-9">
+                        <p className="text-[24px] leading-[32px] sm:text-[24px] font-Poppins text-whiteTextColor">Invitation:</p>
+                    </div>
+                    <div className="flex flex-col w-full justify-center items-center py-6">
+                        <button onClick={handleClick} className="w-64 flex flex-col py-6 px-14 gap-x-8 sm:gap-y-8 rounded-3xl bg-grayBackgroundColor justify-center items-center">
+                            <div className="flex bg-grayColor rounded-full w-12 h-12 justify-center items-center">
+                                <div className="flex">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1_9052)">
+                                            <path d="M3 1L15 5V23L3 19V1ZM3 1H21V19H18" stroke="#FCFCFD" stroke-width="2" stroke-miterlimit="10"/>
+                                            <path d="M11 13V15" stroke="#FCFCFD" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_1_9052">
+                                                <rect width="24" height="24" fill="white"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div className="flex py-2 flex-col justify-center items-center">
+                                <p className="p-2 text-[16px] leading-[24px] font-Poppins text-whiteTextColor">General entrance</p>
+                                <p className="p-2 text-[46px] leading-[24px] font-Poppins text-whiteTextColor">× 1</p>
+                            </div>
+                        </button>
+                    </div>
+                    <div className="flex flex-col justify-center items-center py-7">
+                        <img src='/assets/img/qr-code 1.png' className='w-[180px] h-[180px] block'></img>
+                        <p className="text-[16px] leading-[24px] w-64 text-center font-Poppins text-whiteTextColor py-4">Find the entrance with logo $VALT and show this OR code to staff</p>
+                    </div>
+                    <div className="flex flex-col justify-center items-center">
+                        <div className="flex flex-row sm:flex-col justify-between items-center lg:w-[508px] md:w-[508px] sm:w-[296px]">
+                            <div className="flex flex-col w-full justify-center items-start">
+                                <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor py-4">Send to email:</p>
+                                <input className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor h-12 w-[316px] sm:w-[294px] pl-4 pr-2 py-2 flex ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent justify-end">
+                                    
+                                </input>
+                            </div>
+                            <div className="flex w-full pt-14 sm:pt-8 justify-center items-center">
+                                <button className="w-[159px] sm:w-[296px] h-12 py-[16px] px-[24px] rounded-[90px] bg-greenColor flex justify-center items-center text-[16px] font-bold color-dark" >SEND</button>
+                            </div>
+                        </div>
+                        <p className="text-[18px] leading-[32px] w-64 text-center font-Poppins text-grayTextColor py-6">We do not save email address</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default ConfirmInv;
