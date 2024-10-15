@@ -58,7 +58,7 @@ const Eventlistbar = () => {
                 </div>
             </div>
             <div className="w-full flex sm:flex-col lg:px-40 md:px-[39px] sm:px-[16px] py-5 justify-between">
-                <div className="flex">
+                {/* <div className="flex">
 
                     <div className="  h-12 w-[256px]  pl-4 pr-2 py-2 flex ring-2 ring-inset ring-current items-center rounded-[12px] bg-transparent justify-between">
                         <input
@@ -86,7 +86,7 @@ const Eventlistbar = () => {
                             </svg>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className="flex my-[10px] sm:mt-8">
                     <button className="justify-center bg-white rounded-[14px] w-[55px] items-center mr-3">
                         <p className="text-lg font-bold text-mainDark">ALL</p>
