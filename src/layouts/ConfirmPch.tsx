@@ -19,7 +19,7 @@ const ConfirmInv = () => {
                         <p className="text-[24px] leading-[32px] sm:text-[24px] font-Poppins text-whiteTextColor">Invitation:</p>
                     </div>
                     <div className="flex flex-col w-full justify-center items-center py-6">
-                        <button onClick={handleClick} className="w-64 flex flex-col py-6 px-14 gap-x-8 sm:gap-y-8 rounded-3xl bg-grayBackgroundColor justify-center items-center">
+                        <button onClick={handleClick} className="hover:bg-[#252b3b] active:bg-[#232e3b] w-64 flex flex-col py-6 px-14 gap-x-8 sm:gap-y-8 rounded-3xl bg-grayBackgroundColor justify-center items-center">
                             <div className="flex bg-grayColor rounded-full w-12 h-12 justify-center items-center">
                                 <div className="flex">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

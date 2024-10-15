@@ -28,7 +28,8 @@ const Footer = () => {
                         </button>
                     </div>
                     </div>
-                    <button onClick={Addeventbutton} className="w-[160px] flex justify-center items-center border-[2px] border-grayColor rounded-full text-white text-[16px] font-bold cursor-pointer">
+                    <button onClick={Addeventbutton} className="w-[160px] flex justify-center items-center border-[2px] border-grayColor rounded-full text-white text-[16px] font-bold cursor-pointer
+                    hover:bg-[#252b3b] active:bg-[#232e3b]">
                         Add event
                     </button>
                 </div>

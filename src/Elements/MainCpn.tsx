@@ -73,9 +73,9 @@ const MainCpn = () => {
                 
             </div>
             <p className="text-3xl font-medium text-whiteTextColor sm:hidden md:block lg:hidden">Total $VALT</p>
-            <div className="w-full  flex flex-row justify-center items-center gap-[18px] md:mt-[-36px]">
-                <button className='rounded-full focus:outline-none focus:ring  focus:ring-greenColor'><img src="/assets/img/minus_icon.png" className="w-[62px] h-[62px]"></img></button>
-                <img src="/assets/img/wallet_icon.png" className="w-[62px] h-[62px] lg:block hidden "></img>
+            <div className="w-full flex flex-row justify-center items-center gap-[18px] md:mt-[-36px]">
+                <button className='rounded-full focus:outline-none focus:ring focus:ring-greenColor'><img src="/assets/img/minus_icon.png" className="w-[62px] h-[62px]]"></img></button>
+                <img src="/assets/img/wallet_icon.png" className="w-[62px] h-[62px]"></img>
                 <p className="md:text-[96px] sm:text-[56px] font-bold text-greenColor">3000</p>
                 <button className='rounded-full focus:outline-none focus:ring focus:ring-greenColor'><img src="/assets/img/plus_icon.png" className="w-[62px] h-[62px]]"></img></button>
             </div >
