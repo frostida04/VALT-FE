@@ -215,8 +215,8 @@ const Addevents: React.FC = () =>  {
                                         type="text"
                                         placeholder=""
                                         className="h-12 w-full text-whiteTextColor text-[24px] leading-[24px] flex ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
-                                        value={formData.invitationstitle}
-                                        onChange={handleChange}
+                                        // value={formData.invitationstitle}
+                                        // onChange={handleChange}
                                     />
                                 </div>
                                 <div className="flex flex-col col-span-3 md:col-span-3 sm:col-span-10 gap-3">
@@ -225,8 +225,8 @@ const Addevents: React.FC = () =>  {
                                         type="number"
                                         placeholder=""
                                         className="h-12 w-full flex text-whiteTextColor text-[24px] leading-[24px] ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
-                                        value={formData.invitationsnumber}
-                                        onChange={handleChange}
+                                        // value={formData.invitationsnumber}
+                                        // onChange={handleChange}
                                     />
                                 </div>
                                 <div className="flex flex-col col-span-2 md:col-span-3 sm:col-span-10 gap-3">
@@ -235,8 +235,8 @@ const Addevents: React.FC = () =>  {
                                         type="number"
                                         placeholder=""
                                         className="h-12 w-full flex text-whiteTextColor text-[24px] leading-[24px] ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
-                                        value={formData.invitationslimit}
-                                        onChange={handleChange}
+                                        // value={formData.invitationslimit}
+                                        // onChange={handleChange}
                                     />
                                 </div>
                                 <div className="flex flex-col col-span-1 md:col-span-2 sm:col-span-10 gap-3">
@@ -245,8 +245,8 @@ const Addevents: React.FC = () =>  {
                                         type="text"
                                         placeholder=""
                                         className="h-12 w-full text-whiteTextColor text-[24px] leading-[24px] flex ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
-                                        value={formData.invitationsvalt}
-                                        onChange={handleChange}
+                                        // value={formData.invitationsvalt}
+                                        // onChange={handleChange}
                                     />
                                 </div>
                                 <div className="flex flex-col col-span-4 md:col-span-2 sm:col-span-10 gap-3">
@@ -255,8 +255,8 @@ const Addevents: React.FC = () =>  {
                                         type="text"
                                         placeholder=""
                                         className="h-12 w-full text-whiteTextColor text-[24px] leading-[24px] flex ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
-                                        value={formData.invitationstitle}
-                                        onChange={handleChange}
+                                        // value={formData.invitationstitle}
+                                        // onChange={handleChange}
                                     />
                                 </div>
                                 <div className="flex flex-col col-span-3 md:col-span-3 sm:col-span-10 gap-3">
@@ -265,8 +265,8 @@ const Addevents: React.FC = () =>  {
                                         type="number"
                                         placeholder=""
                                         className="h-12 w-full flex text-whiteTextColor text-[24px] leading-[24px] ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
-                                        value={formData.invitationsnumber}
-                                        onChange={handleChange}
+                                        // value={formData.invitationsnumber}
+                                        // onChange={handleChange}
                                     />
                                 </div>
                                 <div className="flex flex-col col-span-2 md:col-span-3 sm:col-span-10 gap-3">
@@ -275,8 +275,8 @@ const Addevents: React.FC = () =>  {
                                         type="number"
                                         placeholder=""
                                         className="h-12 w-full flex text-whiteTextColor text-[24px] leading-[24px] ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
-                                        value={formData.invitationslimit}
-                                        onChange={handleChange}
+                                        // value={formData.invitationslimit}
+                                        // onChange={handleChange}
                                     />
                                 </div>
                                 <div className="flex flex-col col-span-1 md:col-span-2 sm:col-span-10 gap-3">
@@ -285,8 +285,8 @@ const Addevents: React.FC = () =>  {
                                         type="text"
                                         placeholder=""
                                         className="h-12 w-full text-whiteTextColor text-[24px] leading-[24px] flex ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
-                                        value={formData.invitationsvalt}
-                                        onChange={handleChange}
+                                        // value={formData.invitationsvalt}
+                                        // onChange={handleChange}
                                     />
                                 </div>
                                 <div className="flex flex-col col-span-4 md:col-span-2 sm:col-span-10 gap-3">
@@ -295,8 +295,8 @@ const Addevents: React.FC = () =>  {
                                         type="text"
                                         placeholder=""
                                         className="h-12 w-full text-whiteTextColor text-[24px] leading-[24px] flex ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
-                                        value={formData.invitationstitle}
-                                        onChange={handleChange}
+                                        // value={formData.invitationstitle}
+                                        // onChange={handleChange}
                                     />
                                 </div>
                                 <div className="flex flex-col col-span-3 md:col-span-3 sm:col-span-10 gap-3">
@@ -305,8 +305,8 @@ const Addevents: React.FC = () =>  {
                                         type="number"
                                         placeholder=""
                                         className="h-12 w-full flex text-whiteTextColor text-[24px] leading-[24px] ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
-                                        value={formData.invitationsnumber}
-                                        onChange={handleChange}
+                                        // value={formData.invitationsnumber}
+                                        // onChange={handleChange}
                                     />
                                 </div>
                                 <div className="flex flex-col col-span-2 md:col-span-3 sm:col-span-10 gap-3">
@@ -315,8 +315,8 @@ const Addevents: React.FC = () =>  {
                                         type="number"
                                         placeholder=""
                                         className="h-12 w-full flex text-whiteTextColor text-[24px] leading-[24px] ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
-                                        value={formData.invitationslimit}
-                                        onChange={handleChange}
+                                        // value={formData.invitationslimit}
+                                        // onChange={handleChange}
                                     />
                                 </div>
                                 <div className="flex flex-col col-span-1 md:col-span-2 sm:col-span-10 gap-3">
@@ -325,8 +325,7 @@ const Addevents: React.FC = () =>  {
                                         type="text"
                                         placeholder=""
                                         className="h-12 w-full text-whiteTextColor text-[24px] leading-[24px] flex ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
-                                        value={formData.invitationsvalt}
-                                        onChange={handleChange}
+                                        // value={formData.invitationsvalt}
                                     />
                                 </div>
                             </div>
@@ -364,7 +363,7 @@ const Addevents: React.FC = () =>  {
                             <button className="w-[184px] py-[16px] px-[24px] rounded-[90px] bg-greenColor flex justify-center items-center text-[16px] font-bold color-dark hover:bg-[#8ed6a9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c6e6d2]" >DONE</button>
                         </div>
                         <div className="flex w-full p-4 justify-center items-center">
-                            <button className="w-[184px] py-[16px] px-[24px] rounded-[90px] bg-transparent flex justify-center items-center text-[16px] font-bold text-grayTextColor" >CANCEL</button>
+                            <button className="w-[184px] py-[16px] px-[24px] rounded-[90px] bg-transparent flex justify-center items-center text-[16px] font-bold text-grayTextColor hover:bg-[#252b3b] active:bg-[#232e3b]" >CANCEL</button>
                         </div> 
                     </div>
                 </div>
