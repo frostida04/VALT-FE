@@ -1,5 +1,6 @@
 import Pchase_Con from "../Elements/Pchase_Con"; 
 import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
 const ConfirmInv = () => {
     const navigate = useNavigate();
 
@@ -7,6 +8,17 @@ const ConfirmInv = () => {
       // Navigate to "/about" when the button is clicked
       navigate('/complete');
     };
+    const [inputValue, setInputValue] = useState('');
+
+    const handleChange = (event : any) => {
+        const value = event.target.value;
+
+        // Limit input to 4 characters
+        if (value.length <= 30) {
+        setInputValue(value);
+        }
+    };
+
     return (
         <div className="flex w-full py-6">
             <div className="flex w-full py-5 lg:px-40">
@@ -49,7 +61,7 @@ const ConfirmInv = () => {
                         <div className="flex flex-row sm:flex-col justify-between items-center lg:w-[508px] md:w-[508px] sm:w-[296px]">
                             <div className="flex flex-col w-full justify-center items-start">
                                 <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor py-4">Send to email:</p>
-                                <input className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor h-12 w-[316px] sm:w-[294px] pl-4 pr-2 py-2 flex ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent justify-end">
+                                <input type="text" value={inputValue} onChange={handleChange} className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor h-12 w-[316px] sm:w-[294px] pl-4 pr-2 py-2 flex ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent justify-end">
                                     
                                 </input>
                             </div>

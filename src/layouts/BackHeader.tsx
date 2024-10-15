@@ -7,6 +7,7 @@ const BackHeader = () => {
     const handleGoBack = () => {
         // Navigate to the previous page
         navigate(-1);
+
     };
     return(
         <div className="w-full flex flex-row lg:px-lg-ctn-px md:px-md-ctn-px sm:px-sm-ctn-px py-ctn-py gap-x-3  items-center">

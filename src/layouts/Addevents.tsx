@@ -124,17 +124,24 @@ const Addevents: React.FC = () =>  {
                             <div className="grid grid-flow-row w-full gap-8 grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                                 <div className="flex flex-col w-full gap-3">
                                     <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Country</p>
-                                    <select name="country" className="h-12 w-full px-5 text-whiteTextColor text-[24px] leading-[24px] flex appearance-none ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent" value={formData.country} onChange={handleChange}>
-                                        <option value="" className='text-grayTextColor text-[24px] leading-[24px]'>Canada</option>
-                                        <option value="" className='text-grayTextColor text-[24px] leading-[24px]'>US</option>
-                                    </select>
+                                    <input
+                                        type="text"
+                                        placeholder=""
+                                        className="h-12 w-full px-5 text-whiteTextColor text-[24px] leading-[24px] flex appearance-none ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent"
+                                        // value={formData.invitationstitle}
+                                        // onChange={handleChange}
+                                    />
+        
                                 </div>
                                 <div className="flex flex-col sm:w-full gap-3">
                                     <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">City</p>
-                                    <select name="country" className="h-12 w-full px-5 text-whiteTextColor text-[24px] leading-[24px] flex appearance-none ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent" value={formData.country} onChange={handleChange}>
-                                        <option value="" className='text-grayTextColor text-[24px] leading-[24px]'>Washinton</option>
-                                        <option value="" className='text-grayTextColor text-[24px] leading-[24px]'>New York</option>
-                                    </select>
+                                    <input
+                                        type="text"
+                                        placeholder=""
+                                        className="h-12 w-full px-5 text-whiteTextColor text-[24px] leading-[24px] flex appearance-none ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent"
+                                        // value={formData.invitationstitle}
+                                        // onChange={handleChange}
+                                    />
                                 </div>
                                 <div className="flex flex-col sm:w-full gap-3">
                                     <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">WWW</p>

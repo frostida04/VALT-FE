@@ -50,13 +50,13 @@ const Footer = () => {
                     )}
                 </div>
                 <div className="flex justify-start items-center md:w-full gap-[24px]">
-                    <a href="https://web.telegram.org">
+                    <a href="https://t.me/valt_coin">
                         <img src="/assets/img/telegram_icon.png" className="w-[24px] h-[24px]"></img>
                     </a>
-                    <a href="https://linkedin.com">
+                    <a href="https://www.linkedin.com/company/valt-coin/">
                         <img src="/assets/img/linkedin_icon.png" className="w-[24px] h-[24px]"></img>
                     </a>
-                    <a href="https://twitter.com">
+                    <a href="https://x.com/valt_coin">
                         <img src="/assets/img/twitter_icon.png" className="w-[24px] h-[24px]"></img>
                     </a>
                 </div>

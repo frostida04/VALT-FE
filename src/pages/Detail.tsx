@@ -5,9 +5,16 @@ import Footer from "../layouts/Footer";
 import MainCpn from "../Elements/MainCpn";
 import TextSection from "../Elements/TextSection";
 import Eventview from "../layouts/Eventview";
-
+import { useEffect } from "react";
 const Detail = () => {
-
+    useEffect(() => {
+        const unlisten = (() => {
+            window.scrollTo(0, 0);
+        });
+        return () => {
+            unlisten();
+        };
+    }, []);
     return (
         <>
             <Header/>
