@@ -24,12 +24,12 @@ const MainCpn = () => {
                         <p className="text-[24px] leading-[30px] font-semibold text-whiteTextColor">General</p>
                         <p className="text-[24px] leading-[30px] font-semibold text-whiteTextColor">entrance</p>
                         
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">All options included in</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">All options included in</p>
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">the STANDARD ticket</p>
                         
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">Lunch box (2 days)</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Lunch box (2 days)</p>
                         
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">Video recordings of speeches</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Video recordings of speeches</p>
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">(Uminers and KuCoin stages)</p>
                         <div className="absolute bottom-[20px] text-[26px] leading-[24px] font-semibold text-greenColor">750</div>
                     </button>
@@ -38,16 +38,16 @@ const MainCpn = () => {
                     hover:bg-[#252b3b] active:bg-[#232e3b] focus:outline-none focus:ring focus:ring-greenColor" onClick={handleClick}>
                         <img src="/assets/img/vip_icon.png" className="w-[48px] h-[48px]"></img>
                         <p className="text-[24px] leading-[30px] font-semibold text-whiteTextColor">VIP entrance</p>
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">VIP entrance</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">VIP entrance</p>
                         
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">All options included in</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">All options included in</p>
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">the STANDARD ticket</p>
                         
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">Lunch box (2 days)</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Lunch box (2 days)</p>
                         
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">Video recordings of speeches</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Video recordings of speeches</p>
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">(Uminers and KuCoin stages)</p>
-                        <div className="absolute bottom-[20px] text-[26px] leading-[24px] font-semibold text-greenColor">750</div>
+                        <div className="absolute bottom-[20px] text-[26px] leading-[24px] font-semibold text-greenColor">1500</div>
                     </button>
 
                     <button className="relative w-[256px] sm:w-full gap-3 h-[462px] bg-darkgrayBackgroundColor rounded-3xl flex items-center  flex-col p-6
@@ -55,14 +55,14 @@ const MainCpn = () => {
                         <img src="/assets/img/vip_icon2.png" className="w-[48px] h-[48px]"></img>
                         <p className="text-[24px] leading-[30px] font-semibold text-whiteTextColor">VIP entrance</p>
                             <p className="text-[24px] leading-[30px] font-semibold text-whiteTextColor">(BULL)</p>
-                            <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">VIP entrance (BULL)</p>
+                            <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">VIP entrance (BULL)</p>
                         
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">All options included in</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">All options included in</p>
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">the STANDARD ticket</p>
                         
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">Lunch box (2 days)</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Lunch box (2 days)</p>
                         
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor mt-4">Video recordings of speeches</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Video recordings of speeches</p>
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">(Uminers and KuCoin stages)</p>
                         <div className="absolute bottom-[20px] text-[26px] leading-[24px] font-semibold text-greenColor">3000
                             <span className="text-whiteTextColor"> × 2</span>
