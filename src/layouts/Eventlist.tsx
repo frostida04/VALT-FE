@@ -26,7 +26,7 @@ const Eventlist = () => {
                 </div>
             </div>
             <div className="flex flex-col py-4">
-                <button className="justify-normal items-start my-4" onClick={handleClick}>
+                <button className="justify-normal items-start my-4 " onClick={handleClick}>
                     <Card />
                 </button>
                 <button className="justify-normal items-start my-4" onClick={handleClick}>

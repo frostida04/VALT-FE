@@ -54,7 +54,7 @@ const ConfirmInv = () => {
                                 </input>
                             </div>
                             <div className="flex w-full pt-14 sm:pt-8 justify-center items-center">
-                                <button className="w-[159px] sm:w-[296px] h-12 py-[16px] px-[24px] rounded-[90px] bg-greenColor flex justify-center items-center text-[16px] font-bold color-dark" >SEND</button>
+                                <button className="w-[159px] sm:w-[296px] h-12 py-[16px] px-[24px] rounded-[90px] bg-greenColor flex justify-center items-center text-[16px] font-bold color-dark hover:bg-[#8ed6a9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c6e6d2]" >SEND</button>
                             </div>
                         </div>
                         <p className="text-[18px] leading-[32px] w-64 text-center font-Poppins text-grayTextColor py-6">We do not save email address</p>

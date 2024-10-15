@@ -20,7 +20,7 @@ const CompltPch = () => {
                                 </input>
                             </div>
                             <div className="flex w-full sm:pt-6 justify-center items-center md:pl-2">
-                                <button className="w-[159px] sm:w-[344px] h-12 py-[16px] px-[24px] rounded-[90px] bg-greenColor flex justify-center items-center text-[16px] font-bold color-dark" >SEND</button>
+                                <button className="w-[159px] sm:w-[344px] h-12 py-[16px] px-[24px] rounded-[90px] bg-greenColor flex justify-center items-center text-[16px] font-bold color-dark hover:bg-[#8ed6a9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c6e6d2]" >SEND</button>
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@ const CompltPch = () => {
                                 </input>
                             </div>
                             <div className="flex w-full sm:pt-6 justify-center items-center md:pl-2">
-                                <button className="w-[159px] sm:w-[344px] h-12 py-[16px] px-[24px] rounded-[90px] bg-greenColor flex justify-center items-center text-[16px] font-bold color-dark" >SEND</button>
+                                <button className="w-[159px] sm:w-[344px] h-12 py-[16px] px-[24px] rounded-[90px] bg-greenColor flex justify-center items-center text-[16px] font-bold color-dark hover:bg-[#8ed6a9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c6e6d2]" >SEND</button>
                             </div>
                         </div>
                         
@@ -48,7 +48,7 @@ const CompltPch = () => {
                                 </input>
                             </div>
                             <div className="flex w-full pt-14 sm:pt-8 justify-center items-center">
-                                <button className="w-[159px] sm:w-[296px] h-12 py-[16px] px-[24px] rounded-[90px] bg-greenColor flex justify-center items-center text-[16px] font-bold color-dark" >SEND</button>
+                                <button className="w-[159px] sm:w-[296px] h-12 py-[16px] px-[24px] rounded-[90px] bg-greenColor flex justify-center items-center text-[16px] font-bold color-dark hover:bg-[#8ed6a9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c6e6d2]" >SEND</button>
                             </div>
                         </div>
                     </div>

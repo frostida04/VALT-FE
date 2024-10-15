@@ -54,7 +54,7 @@ const ConfirmInv = () => {
                     </div>
                     <div className="flex flex-col justify-center items-center p-4">
                         <div className="flex w-full p-4 justify-center items-center">
-                            <button className="w-[184px] py-[16px] px-[24px] rounded-[90px] bg-greenColor flex justify-center items-center text-[16px] font-bold color-dark" onClick={handleClick}>CONFIRM</button>
+                            <button type="submit" className="w-[184px] py-[16px] px-[24px] rounded-[90px] bg-greenColor flex justify-center items-center text-[16px] font-bold color-dark hover:bg-[#8ed6a9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c6e6d2]" onClick={handleClick}>CONFIRM</button>
                         </div>
                         <div className="flex w-full p-4 justify-center items-center">
                             <button className="w-[184px] py-[16px] px-[24px] rounded-[90px] bg-transparent flex justify-center items-center text-[16px] font-bold text-grayTextColor" >CANCEL</button>

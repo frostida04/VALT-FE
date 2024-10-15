@@ -9,7 +9,8 @@ const Card = () => {
     //   navigate('/detail');
     };
     return (
-        <div className="w-full sm:px-[16px] flex md:flex-col sm:flex-col p-6 gap-x-8 sm:gap-y-8 rounded-3xl bg-darkgrayBackgroundColor justify-between">
+        <div className="w-full sm:px-[16px] flex md:flex-col sm:flex-col p-6 gap-x-8 sm:gap-y-8 rounded-3xl bg-darkgrayBackgroundColor justify-between 
+        hover:bg-[#252b3b] active:bg-[#232e3b] focus:outline-none focus:ring focus:ring-[#32383b]">
             <div className="flex md:flex-row sm:flex-col gap-x-8 sm:gap-y-8">
                 {/* <img src='/assets/img/section1_logo.png' className='w-[168px] h-[168px] hidden lg:block'></img> */}
                 <img src='/assets/img/logo2.png' className='w-[168px] h-[168px] block'></img>
@@ -30,7 +31,8 @@ const Card = () => {
                     <a href="https://coinfest.asid" className="text-[22px] leading-[24px] font-normal text-blueTextColor">coinfest.asid</a>
                 </div>
             </div>
-            <button className="bg-grayBackgroundColor flex rounded-3xl lg:w-[370px] w-full flex-col pt-[42px] md:mt-8" onClick={handleClick}>
+            <button className="bg-grayBackgroundColor flex rounded-3xl lg:w-[370px] w-full flex-col pt-[42px] md:mt-8
+           " onClick={handleClick}>
                 <div className="w-full flex flex-row items-center justify-center rounded-3xl bg-grayBackgroundColor gap-1">
                     <img src="/assets/img/wallet_icon.png" className="w-[56px] h-[56px]" alt="wallet_icon"></img>
                     <div className="text-[38px] leading-[24px] font-semibold text-greenColor">500</div>
