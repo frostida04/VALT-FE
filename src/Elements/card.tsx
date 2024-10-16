@@ -16,7 +16,7 @@ const Card = () => {
                 <img src='/assets/img/logo2.png' className='w-[168px] h-[168px] block'></img>
                 <div className="flex flex-col gap-y-3 justify-start items-start">
                     <div className="flex flex-row gap-x-4 h-8">
-                        <div className="px-2 rounded bg-pinkColor font-bold text-lg text-white">
+                        <div className="px-2 rounded bg-pinkColor font-bold text-lg text-white min-w-[88px]">
                             {/* <span className="hidden lg:block">AUG 23, 18:00 (UTC)</span> */}
                             <span className="sm:block md:block md:text-[14px] sm:text-[13px]">AUG 22-23</span>
                         </div>

@@ -4,8 +4,8 @@ const Cardpre = () => {
             <img src='/assets/img/section1_logo.png' className='w-[168px] h-[168px] lg:block'></img>
             <div className="flex flex-col gap-y-3">
                 <div className="flex flex-row gap-x-4 h-8">
-                    <div className="px-2 rounded bg-pinkColor font-bold text-lg text-white">
-                        <span className="lg:block sm:block md:block md:text-[14px] sm:text-[13px]">AUG 22-23</span>
+                    <div className="px-2 rounded bg-pinkColor font-bold text-lg text-white min-w-[88px]">
+                        <span className="lg:block sm:block md:text-[14px] sm:text-[13px]">AUG 22-23</span>
                     </div>
                     <div className="px-2 rounded border-2 border-yellowColor  font-bold text-lg text-yellowColor">SOCCER</div>
                 </div>

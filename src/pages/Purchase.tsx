@@ -15,7 +15,6 @@ const Purchase = () => {
     return (
         <div>
             <Header/>
-            <BackHeader/>
             <ConfirmPch />
             <div className="mt-24"><Footer /></div>
         </div>
