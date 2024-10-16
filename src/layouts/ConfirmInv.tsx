@@ -6,6 +6,10 @@ const ConfirmInv = () => {
         // Navigate to "/about" when the button is clicked
         navigate('/purchase');
       };
+      const handlemainpage = () => {
+        // Navigate to "/about" when the button is clicked
+        navigate('/');
+      };
     const [inputValue, setInputValue] = useState('');
 
     const handleChange = (event : any) => {
@@ -39,7 +43,7 @@ const ConfirmInv = () => {
                         <p className="text-[24px] leading-[32px] sm:text-[28px] font-Poppins text-white">General entrance</p>
                     </div>
                     <div className="flex flex-col justify-center items-center py-7">
-                        <div className="flex flex-row">
+                        <div className="relative flex flex-row">
                             {/* <div className="h-12 w-[156px]  pl-2 pr-2 py-2 flex ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent justify-between">
                                 <div className="inline-flex w-8 h-8 px-auto items-center py-auto justify-between">
                                     <svg className="mx-auto" width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +57,7 @@ const ConfirmInv = () => {
                                     </svg>
                                 </div>
                             </div> */}
-                            <select name="coin" className="h-12 w-[156px] px-5 text-whiteTextColor text-[16px] leading-[24px] flex appearance-none ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent justify-center items-center">
+                            <select name="coin" className="h-12 w-[156px] px-5 text-whiteTextColor text-[16px] leading-[24px] flex appearance-none ring-2 ring-inset ring-greenColor rounded-[12px] bg-transparent justify-center items-center">
                                 <option value="" className='text-grayTextColor text-[24px] leading-[24px]'>
                                     <div className="inline-flex w-8 h-8 px-auto items-center py-auto justify-between">
                                         <svg className="mx-auto" width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,6 +107,11 @@ const ConfirmInv = () => {
                                     <p className="pr-6 text-white">POL</p>
                                 </option>
                             </select>
+                            <div className="absolute mr-24 h-full pointer-events-none inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2071 9.79289C15.8166 9.40237 15.1834 9.40237 14.7929 9.79289L12 12.5858L9.20711 9.79289C8.81658 9.40237 8.18342 9.40237 7.79289 9.79289C7.40237 10.1834 7.40237 10.8166 7.79289 11.2071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L16.2071 11.2071C16.5976 10.8166 16.5976 10.1834 16.2071 9.79289Z" fill="#FCFCFD"/>
+                                </svg>
+                            </div>
                             <p className="text-[32px] leading-[48px] font-Poppins text-white px-5">150</p>
                         </div>
                         <div className="flex flex-col w-full justify-center items-center py-4">
@@ -118,7 +127,7 @@ const ConfirmInv = () => {
                             <button type="submit" className="w-[184px] py-[16px] px-[24px] rounded-[90px] bg-greenColor flex justify-center items-center text-[16px] font-bold color-dark hover:bg-[#8ed6a9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c6e6d2]" onClick={handleClick}>CONFIRM</button>
                         </div>
                         <div className="flex w-full p-4 justify-center items-center">
-                            <button className="w-[184px] py-[16px] px-[24px] rounded-[90px] bg-transparent flex justify-center items-center text-[16px] font-bold text-grayTextColor hover:bg-[#252b3b] active:bg-[#232e3b]" >CANCEL</button>
+                            <button className="w-[184px] py-[16px] px-[24px] rounded-[90px] bg-transparent flex justify-center items-center text-[16px] font-bold text-grayTextColor hover:bg-[#252b3b] active:bg-[#232e3b]" onClick={handlemainpage}>CANCEL</button>
                         </div> 
                     </div>
                 </div>

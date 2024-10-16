@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, ChangeEvent, FormEvent, useRef } from 'react';
 
 interface FormData {
   eventName: string;
@@ -46,15 +46,20 @@ const Addevents: React.FC = () =>  {
         endOfOfferTime: '',
       });
     
-      const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-        const { name, value } = event.target;
-        setFormData(prevState => ({
-          ...prevState,
-          [name]: value
-        }));
-      };
-    
-    //   const handleInvitationChange = (index: number, field: keyof Invitation) => (event: ChangeEvent<HTMLInputElement>) => {
+        const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+            const { name, value } = event.target;
+            setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+            }));
+        };
+        const [file, setFile] = useState();
+        function handleFileChange(e : any) {
+            console.log(e.target.files);
+            // setFile(URL.createObjectURL(e.target.files[0]));
+        }
+       
+    //   const  handleInvitationChange = (index: number, field: keyof Invitation) => (event: ChangeEvent<HTMLInputElement>) => {
     //     // const newInvitations = formData.invitations.map((invitation, i) => {
     //     //   if (i === index) {
     //     //     return { ...invitation, [field]: event.target.value };
@@ -79,12 +84,13 @@ const Addevents: React.FC = () =>  {
                     <div className=" flex w-full justify-center items-center">
                         <p className="text-[36px] leading-[24px] sm:text-[28px] font-Poppins text-whiteTextColor">Add event</p>
                     </div>
-                    <div className="flex flex-col lg:px-[104px] lg:pt-[65px]">
+                    <div className="flex flex-col lg:px-[104px] lg:pt-[65px] ">
                         <div className="flex sm:flex-col py-10 justify-center items-center gap-8">
                             <div className="block w-[256px] sm:w-full pr-15">
                                 <div className="w-[196px] sm:w-[196px] h-[196px] p-5 flex border-dashed border-greenColor border-2 items-center rounded-[12px] bg-transparent justify-end">
-                                    <div className="w-full h-full flex  gap-8 rounded-2xl bg-grayColor">
-                                    </div>
+                                    <input type="file" onChange={handleFileChange} className="w-full h-full flex  gap-8 rounded-2xl bg-grayColor">
+                                    
+                                    </input>
                                 </div>
                             </div>
                             <div className="flex flex-col w-full gap-8">
@@ -155,26 +161,41 @@ const Addevents: React.FC = () =>  {
                                         onChange={handleChange}
                                     />
                                 </div>
-                                <div className="flex flex-col sm:w-full gap-3">
+                                <div className="relative flex flex-col sm:w-full gap-3">
                                     <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Type</p>
-                                    <select name="country" className="h-12 w-full px-5 text-whiteTextColor text-[24px] leading-[24px] flex appearance-none ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent" value={formData.country} onChange={handleChange}>
+                                    <select name="country" className="h-12 w-full pl-5 text-whiteTextColor text-[24px] leading-[24px] flex appearance-none pr-[50px] ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent" value={formData.country} onChange={handleChange}>
                                         <option value="" className='text-grayTextColor text-[24px] leading-[24px]'>Soccer</option>
                                         <option value="" className='text-grayTextColor text-[24px] leading-[24px]'>Concert</option>
                                     </select>
+                                    <div className="absolute pt-10 h-full pointer-events-none inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2071 9.79289C15.8166 9.40237 15.1834 9.40237 14.7929 9.79289L12 12.5858L9.20711 9.79289C8.81658 9.40237 8.18342 9.40237 7.79289 9.79289C7.40237 10.1834 7.40237 10.8166 7.79289 11.2071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L16.2071 11.2071C16.5976 10.8166 16.5976 10.1834 16.2071 9.79289Z" fill="#FCFCFD"/>
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div className="flex flex-col sm:w-full gap-3">
+                                <div className="relative flex flex-col sm:w-full gap-3">
                                     <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Active</p>
                                     <select name="country" className="h-12 w-full px-5 text-whiteTextColor text-[24px] leading-[24px] flex appearance-none ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent" value={formData.country} onChange={handleChange}>
                                         <option value="" className='text-grayTextColor text-[24px] leading-[24px]'>Active</option>
                                         <option value="" className='text-grayTextColor text-[24px] leading-[24px]'>Inactive</option>
                                     </select>
+                                    <div className="absolute pt-10 h-full pointer-events-none inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2071 9.79289C15.8166 9.40237 15.1834 9.40237 14.7929 9.79289L12 12.5858L9.20711 9.79289C8.81658 9.40237 8.18342 9.40237 7.79289 9.79289C7.40237 10.1834 7.40237 10.8166 7.79289 11.2071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L16.2071 11.2071C16.5976 10.8166 16.5976 10.1834 16.2071 9.79289Z" fill="#FCFCFD"/>
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div className="flex flex-col sm:w-full gap-3">
+                                <div className="relative flex flex-col sm:w-full gap-3">
                                     <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Online/Offline</p>
-                                    <select name="country" className="h-12 w-full px-5 text-whiteTextColor text-[24px] leading-[24px] flex appearance-none ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent" value={formData.country} onChange={handleChange}>
-                                        <option value="" className='text-grayTextColor text-[24px] leading-[24px]'>Online</option>
-                                        <option value="" className='text-grayTextColor text-[24px] leading-[24px]'>Offline</option>
+                                    <select name="country" className="bg-transparent h-12 w-full px-5 text-whiteTextColor text-[24px] leading-[24px] flex appearance-none ring-2 ring-inset ring-greenColor items-center rounded-[12px]" value={formData.country} onChange={handleChange}>
+                                        <option value="bg-transparent" className='text-grayTextColor text-[24px] leading-[24px] bg-transparent'>Online</option>
+                                        <option value="" className='text-grayTextColor text-[24px] leading-[24px] bg-transparent'>Offline</option>
                                     </select>
+                                    <div className="absolute pt-10 h-full pointer-events-none inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2071 9.79289C15.8166 9.40237 15.1834 9.40237 14.7929 9.79289L12 12.5858L9.20711 9.79289C8.81658 9.40237 8.18342 9.40237 7.79289 9.79289C7.40237 10.1834 7.40237 10.8166 7.79289 11.2071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L16.2071 11.2071C16.5976 10.8166 16.5976 10.1834 16.2071 9.79289Z" fill="#FCFCFD"/>
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -185,7 +206,7 @@ const Addevents: React.FC = () =>  {
                                     type="text"
                                     name="link"
                                     placeholder="Link"
-                                    className="h-12 w-full text-whiteTextColor text-[24px] leading-[24px] flex ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
+                                    className="h-12 w-full text-whiteTextColor text-[24px] leading-[24px] flex ring-1 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
                                     value={formData.link}
                                     onChange={handleChange}
                                 />
@@ -229,7 +250,7 @@ const Addevents: React.FC = () =>  {
                                 <div className="flex flex-col col-span-3 md:col-span-3 sm:col-span-10 gap-3">
                                     <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Number of invitations</p>
                                     <input
-                                        type="number"
+                                        type="text"
                                         placeholder=""
                                         className="h-12 w-full flex text-whiteTextColor text-[24px] leading-[24px] ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
                                         // value={formData.invitationsnumber}
@@ -239,7 +260,7 @@ const Addevents: React.FC = () =>  {
                                 <div className="flex flex-col col-span-2 md:col-span-3 sm:col-span-10 gap-3">
                                     <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Limit in one hands</p>
                                     <input
-                                        type="number"
+                                        type="text"
                                         placeholder=""
                                         className="h-12 w-full flex text-whiteTextColor text-[24px] leading-[24px] ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
                                         // value={formData.invitationslimit}
@@ -269,7 +290,7 @@ const Addevents: React.FC = () =>  {
                                 <div className="flex flex-col col-span-3 md:col-span-3 sm:col-span-10 gap-3">
                                     <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor lg:hidden md:hidden">Number of invitations</p>
                                     <input
-                                        type="number"
+                                        type="text"
                                         placeholder=""
                                         className="h-12 w-full flex text-whiteTextColor text-[24px] leading-[24px] ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
                                         // value={formData.invitationsnumber}
@@ -279,7 +300,7 @@ const Addevents: React.FC = () =>  {
                                 <div className="flex flex-col col-span-2 md:col-span-3 sm:col-span-10 gap-3">
                                     <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor lg:hidden md:hidden">Limit in one hands</p>
                                     <input
-                                        type="number"
+                                        type="text"
                                         placeholder=""
                                         className="h-12 w-full flex text-whiteTextColor text-[24px] leading-[24px] ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
                                         // value={formData.invitationslimit}
@@ -309,7 +330,7 @@ const Addevents: React.FC = () =>  {
                                 <div className="flex flex-col col-span-3 md:col-span-3 sm:col-span-10 gap-3">
                                     <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor lg:hidden md:hidden">Number of invitations</p>
                                     <input
-                                        type="number"
+                                        type="text"
                                         placeholder=""
                                         className="h-12 w-full flex text-whiteTextColor text-[24px] leading-[24px] ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
                                         // value={formData.invitationsnumber}
@@ -319,7 +340,7 @@ const Addevents: React.FC = () =>  {
                                 <div className="flex flex-col col-span-2 md:col-span-3 sm:col-span-10 gap-3">
                                     <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor lg:hidden md:hidden">Limit in one hands</p>
                                     <input
-                                        type="number"
+                                        type="text"
                                         placeholder=""
                                         className="h-12 w-full flex text-whiteTextColor text-[24px] leading-[24px] ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent px-5"
                                         // value={formData.invitationslimit}

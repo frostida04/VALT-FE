@@ -1,8 +1,17 @@
+import { useNavigate } from "react-router-dom";
+
 const Header = () => {
+
+    const navigate = useNavigate();
+    const handleClick = () => {
+        // Navigate to "/about" when the button is clicked
+        navigate('/');
+    };
+
     return (
         <>
             <div className="relative justify-center text-white w-full lg:py-[20px] lg:px-[80px] sm:py-[24px] sm:px-[32px] md:py-[24px] md:px-[32px] flex flex-row gap-9 items-center border-grayBackgroundColor border-x-0 border-y-2">
-                <img src="/assets/img/Logo.png" className="w-[72px] h-[60px]" alt="Logo"></img>
+                <button onClick={handleClick}><img src="/assets/img/Logo.png" className="w-[72px] h-[60px]" alt="Logo"></img></button>
                 <div className="border border-grayBackgroundColor h-[50px] sm:hidden"></div>
                 <div className="flex flex-wrap-reverse justify-between w-full items-center gap-x-0 gap-y-3">
 
@@ -20,14 +29,15 @@ const Header = () => {
                     <div className="flex flex-row items-center sm:hidden">
                         <img src="/assets/img/BTC.png" className="w-10 h-10" alt="BTC"></img>
                         <p className="ml-[10px] text-[12px] font-bold text-greyfont">$BtC</p>
-                        <p className="pl-6  text-[18px] md:text-[12px] font-semibold">0.00005</p>
+                        <p className="pl-6  text-[18px] md:text-[12px] font-semibold">N/A</p>
                     </div>
 
                     <div className="flex flex-row items-center sm:hidden">
                         <img src="/assets/img/Eth.png" className="w-10 h-10" alt="ETH"></img>
                         <p className="ml-[10px] text-[12px] font-bold text-greyfont">$ETH</p>
-                        <p className="pl-6  text-[18px] md:text-[12px] font-semibold">0.0004</p>
+                        <p className="pl-6  text-[18px] md:text-[12px] font-semibold">N/A</p>
                     </div>
+
                 </div>
 
                 {/* Add flex-shrink-0 to prevent shrinking */}
