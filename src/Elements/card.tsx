@@ -31,8 +31,8 @@ const Card = () => {
                     <a href="https://coinfest.asid" className="text-[22px] leading-[24px] font-normal text-blueTextColor">coinfest.asid</a>
                 </div>
             </div>
-            <button className="bg-grayBackgroundColor flex rounded-3xl lg:w-[370px] w-full flex-col pt-[42px] md:mt-8" onClick={handleClick}>
-                <div className="w-full flex flex-row items-center justify-center rounded-3xl bg-grayBackgroundColor gap-1">
+            <button className="bg-grayBackgroundColor flex rounded-3xl lg:w-[370px] w-full flex-col pt-[42px] md:mt-8 hover:bg-darkgrayBackgroundColor active:bg-[#252b3b]"  onClick={handleClick}>
+                <div className="w-full flex flex-row items-center justify-center rounded-3xl bg-transparent gap-1">
                     <img src="/assets/img/wallet_icon.png" className="w-[56px] h-[56px]" alt="wallet_icon"></img>
                     <div className="text-[38px] leading-[24px] font-semibold text-greenColor">500</div>
                 </div>

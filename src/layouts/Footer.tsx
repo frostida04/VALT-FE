@@ -1,4 +1,7 @@
 import { useNavigate } from 'react-router-dom';
+import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6"
+import { FaTelegramPlane } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
     const navigate = useNavigate();
 
@@ -43,7 +46,6 @@ const Footer = () => {
              <div className=" py-[24px] flex justify-between items-start md:flex-wrap px-[16px] md:px-[39px] lg:px-[160px]">
                 <div className="w-full flex sm:flex-col md:flex-row lg:flex-row md:justify-between">
                     {
-                        
                         ['© 2024 Tavo Limited, Hong Kong', 'Terms and conditions', 'Privacy policy',].map((item, index) =>
                         <p
                             key={index}
@@ -55,13 +57,13 @@ const Footer = () => {
                 </div>
                 <div className="flex justify-start items-center md:w-full gap-[24px]">
                     <a href="https://t.me/valt_coin">
-                        <img src="/assets/img/telegram_icon.png" className="w-[24px] h-[24px]"></img>
+                        <FaTelegramPlane className='text-[#88816f] invert w-7 h-7'></FaTelegramPlane>
                     </a>
                     <a href="https://www.linkedin.com/company/valt-coin/">
-                        <img src="/assets/img/linkedin_icon.png" className="w-[24px] h-[24px]"></img>
+                        <FaLinkedin className='text-[#88816f] invert w-7 h-7'></FaLinkedin>
                     </a>
                     <a href="https://x.com/valt_coin">
-                        <img src="/assets/img/twitter_icon.png" className="w-[24px] h-[24px]"></img>
+                        <FaXTwitter className='text-[#88816f] invert w-7 h-7'></FaXTwitter>
                     </a>
                 </div>
             </div>

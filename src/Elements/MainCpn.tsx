@@ -6,7 +6,6 @@ const MainCpn = () => {
         // Navigate to "/about" when the button is clicked
         navigate('/invite');
       };
-  
 
     return(
         <div className="w-full flex flex-col items-center sm:p-10 md:p-10 lg:py-10 lg:px-[152px] gap-8 rounded-2xl bg-darkGrayColor">
@@ -17,7 +16,7 @@ const MainCpn = () => {
             </div>
             <div className="flex w-full ">
                 <div className="py-2 md:px-44 sm:px-2 flex flex-row justify-between items-center gap-6 sm:flex-col lg:flex-row  md:flex-col md:w-full w-full overflow-x-hidde sm:min-w-[200px] ">
-                    
+
                     <button className="relative w-[256px] md:w-full md:min-w-[256px] sm:w-full gap-3 h-[462px] bg-darkgrayBackgroundColor rounded-3xl flex items-center  flex-col p-6
                     hover:bg-[#252b3b] active:bg-[#232e3b] focus:outline-none focus:ring focus:ring-greenColor" onClick={handleClick}>
                         <img src="/assets/img/general_entrance.png" className="w-[48px] h-[48px]"></img>
@@ -26,9 +25,9 @@ const MainCpn = () => {
 
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">All options included in</p>
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">the STANDARD ticket</p>
-                        
+
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Lunch box (2 days)</p>
-                        
+
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Video recordings of speeches</p>
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">(Uminers and KuCoin stages)</p>
                         <div className="absolute bottom-[20px] text-[26px] leading-[24px] font-semibold text-greenColor">750</div>
