@@ -46,7 +46,7 @@ const Header = () => {
                     En
                 </button> */}
                 {/* <i  mg src="/assets/img/Connect_metamask_Click.png" className="w-[172px] h-[33px] md:hidden sm:hidden" alt="Connect Metamask"></i> */}
-                <div className="w-[235px] h-[40px] items-center justify-center  md:hidden sm:hidden"><ConnectButton /></div>
+                <div className="pr-5"><div className="w-[235px] h-[40px] items-center justify-center  md:hidden sm:hidden"><ConnectButton /></div></div>
                 <div className="hidden sm:block w-[21.3px] h-[10.6px] border-y-2 border-grayBackgroundColor  flex-shrink-0 "></div>
 
             </div>
@@ -55,7 +55,7 @@ const Header = () => {
                 {/* <button className="rounded-full border-2 py-[12px] px-[16px] w-[93px] h-10 items-center flex justify-center border-grayColor xl:hidden sm:hidden lg:hidden">
                     En
                 </button> */}
-                <div className="w-[235px] h-[40px] items-center justify-center xl:hidden sm:hidden lg:hidden"><ConnectButton /></div>
+                <div className="pr-16"><div className="w-[235px] h-[40px] items-center justify-center xl:hidden sm:hidden lg:hidden"><ConnectButton /></div></div>
             </div>
         </>
     )
