@@ -15,7 +15,6 @@ import AdminHome from './pages/Admin/AdminHome';
 import Organizers from './pages/Admin/Organizers';
 
 
-
 function App() {
   return (
     <BrowserRouter>

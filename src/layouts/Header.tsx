@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-
+import { MetaMaskUIProvider } from "@metamask/sdk-react-ui"
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 const Header = () => {
 
     const navigate = useNavigate();
@@ -44,7 +45,8 @@ const Header = () => {
                 {/* <button className="sm:absolute md:hidden border-2 rounded-full py-[12px] px-[16px] w-[93px] h-10 flex-shrink-0 items-center flex justify-center border-grayColor">
                     En
                 </button> */}
-                <img src="/assets/img/Connect_metamask_Click.png" className="w-[172px] h-[33px] md:hidden sm:hidden" alt="Connect Metamask"></img>
+                {/* <i  mg src="/assets/img/Connect_metamask_Click.png" className="w-[172px] h-[33px] md:hidden sm:hidden" alt="Connect Metamask"></i> */}
+                <div className="w-[235px] h-[40px] items-center justify-center  md:hidden sm:hidden"><ConnectButton /></div>
                 <div className="hidden sm:block w-[21.3px] h-[10.6px] border-y-2 border-grayBackgroundColor  flex-shrink-0 "></div>
 
             </div>
@@ -53,7 +55,7 @@ const Header = () => {
                 {/* <button className="rounded-full border-2 py-[12px] px-[16px] w-[93px] h-10 items-center flex justify-center border-grayColor xl:hidden sm:hidden lg:hidden">
                     En
                 </button> */}
-                <img src="/assets/img/Connect_metamask_Click.png" className="w-[172px] h-[33px] xl:hidden sm:hidden lg:hidden" alt="Connect Metamask"></img>
+                <div className="w-[235px] h-[40px] items-center justify-center xl:hidden sm:hidden lg:hidden"><ConnectButton /></div>
             </div>
         </>
     )
