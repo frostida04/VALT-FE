@@ -24,7 +24,7 @@ const AdminEventlistbar = () => {
 
     };
     return(
-        <div className="w-full flex flex-col text-[#777E90]">
+        <div className="w-full flex flex-col pt-5 text-[#777E90]">
             <div className="w-full flex flex-row justify-center items-center">
                 <div className="flex my-[10px] sm:mt-8">
                     <button onClick={Eventbutton1} className="block justify-center bg-transparent rounded-[14px] w-[118px] items-center text-grayColor hover:bg-[#58BD7D] hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c6e6d2]">
