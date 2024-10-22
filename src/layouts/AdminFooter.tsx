@@ -11,7 +11,7 @@ const AdminFooter = () => {
     };
     const handlechangehome = () => {
         // Navigate to "/about" when the button is clicked
-        navigate('/');
+        navigate('/admin');
       };
     return (
         <div className="w-full flex flex-col">
