@@ -20,7 +20,8 @@ const Purchase = () => {
         };
     }, []);
     async function  getCard(){
-        const response = await axios.get(`http://localhost:5000/getevent/${id}`).then((res)=>{
+        // const response = await axios.get(`https://api.render.com/deploy/srv-csak45t6l47c73f1bkr0?key=5jQ7V47HnJQ/getevent/${id}`).then((res)=>{
+        const response = await axios.get(`https://api.render.com/deploy/srv-csak45t6l47c73f1bkr0?key=5jQ7V47HnJQ/getevent/${id}`).then((res)=>{            
             setData(res.data);
         })
         console.log(response)

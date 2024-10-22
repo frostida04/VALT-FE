@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Tooltip } from 'react-tooltip';
-
+// import { Tooltip, Button } from "@material-tailwind/react";
 
 const AdminCard = ({_id, eventname, country,city, www, date, offerdate, type ,On_offline, gen_invvalt} : any) => {
     const [isOpen, setIsOpen] = useState(false)

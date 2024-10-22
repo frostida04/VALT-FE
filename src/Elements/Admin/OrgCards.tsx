@@ -9,6 +9,7 @@ const OrgCards = ({
   surname,
   country,
   city,
+  telegram,
   phone,
   email,
   organizerId,
@@ -72,30 +73,30 @@ const OrgCards = ({
             <div className="flex sm:flex-col flex-row">
               <div className="block w-[229px]">
                 <div className="text-[24px] pr-5 leading-[32px] font-bold font-poppins text-whiteTextColor">
-                  Phuket Rich
+                  {organizer}
                 </div>
                 <div className="text-[24px] pr-5 leading-[32px] font-poppins text-grayColor">
-                  Phuket, Thailand
+                  {city}, {country}
                 </div>
                 <div>
                   <a
                     href=""
                     className="text-[24px] pr-5 leading-[32px] font-normal text-blueTextColor"
                   >
-                    phuketrich.com
+                    {telegram}
                   </a>
                 </div>
               </div>
               <div className="lg:px-8 md:px-8 sm:pt-8">
                 <div className="text-[24px] leading-[32px] font-bold font-poppins text-whiteTextColor">
-                  Aleksei Mikhailov
+                  {name} {surname}
                 </div>
                 <div>
                   <a
                     href=""
                     className="text-[24px] leading-[32px] font-normal text-blueTextColor"
                   >
-                    +71112223344
+                    {phone}
                   </a>
                 </div>
                 <div>
@@ -103,7 +104,7 @@ const OrgCards = ({
                     href=""
                     className="text-[24px] leading-[32px] font-normal text-blueTextColor"
                   >
-                    hsjhj@mail.ru
+                    {email}
                   </a>
                 </div>
               </div>

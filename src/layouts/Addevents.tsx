@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, useContext, FormEvent, useRef } from 'react';
+import React, { useState, ChangeEvent, FormEvent, useRef } from 'react';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -80,6 +80,7 @@ const Addevents: React.FC = () =>  {
     function handleFileChange(e : any) {
         console.log(e.target.files);
         // setFile(URL.createObjectURL(e.target.files[0]));
+
     }
 
     const handleSubmit = async (e : any) => {
@@ -99,7 +100,8 @@ const Addevents: React.FC = () =>  {
         // }
 
         try {
-            const res = await axios.post("http://localhost:5000/addevent", newEvent);
+            const res = await axios.post("https://api.render.com/deploy/srv-csak45t6l47c73f1bkr0?key=5jQ7V47HnJQ/addevent", newEvent);
+            // const res = await axios.post("https://api.render.com/deploy/srv-csak45t6l47c73f1bkr0?key=5jQ7V47HnJQ/addevent", newEvent);
             console.log(res);
             alert("Post has been Added successfully");
             navigate("/")

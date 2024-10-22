@@ -68,7 +68,8 @@ const Addorganizer: React.FC = () =>  {
         // }
 
         try {
-            const res = await axios.post("http://localhost:5000/addorganizer", newEvent);
+            const res = await axios.post("https://api.render.com/deploy/srv-csak45t6l47c73f1bkr0?key=5jQ7V47HnJQ/addorganizer", newEvent);
+            //const res = await axios.post("https://api.render.com/deploy/srv-csak45t6l47c73f1bkr0?key=5jQ7V47HnJQ/addorganizer", newEvent);
             console.log(res);
             alert("Post has been Added successfully");
             navigate("/Admin")
