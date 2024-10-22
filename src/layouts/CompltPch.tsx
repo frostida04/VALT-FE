@@ -9,8 +9,8 @@ const CompltPch = () => {
     const { id } = useParams();
     const [data, setData] = useState([]);
     async function  getCard(){
-        // const response = await axios.get(`https://api.render.com/deploy/srv-csak45t6l47c73f1bkr0?key=5jQ7V47HnJQ/getevent/${id}`).then((res)=>{
-        const response = await axios.get(`https://api.render.com/deploy/srv-csak45t6l47c73f1bkr0?key=5jQ7V47HnJQ/getevent/${id}`).then((res)=>{            
+        // const response = await axios.get(`https://valt-be.onrender.com/getevent/${id}`).then((res)=>{
+        const response = await axios.get(`https://valt-be.onrender.com/getevent/${id}`).then((res)=>{            
             setData(res.data);
         })
         console.log(response)

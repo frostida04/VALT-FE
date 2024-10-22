@@ -16,8 +16,8 @@ const Eventlist = () => {
 
     const [data,setData] = useState([]);
     async function  getAllCard(){
-        // const response = await axios.get("https://api.render.com/deploy/srv-csak45t6l47c73f1bkr0?key=5jQ7V47HnJQ/getallevent").then((res)=>{
-        const response = await axios.get("https://api.render.com/deploy/srv-csak45t6l47c73f1bkr0?key=5jQ7V47HnJQ/getallevent").then((res)=>{
+        // const response = await axios.get("https://valt-be.onrender.com/getallevent").then((res)=>{
+        const response = await axios.get("https://valt-be.onrender.com/getallevent").then((res)=>{
             setData(res.data);
         })
         console.log(response)

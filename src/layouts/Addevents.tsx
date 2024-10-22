@@ -100,8 +100,8 @@ const Addevents: React.FC = () =>  {
         // }
 
         try {
-            const res = await axios.post("https://api.render.com/deploy/srv-csak45t6l47c73f1bkr0?key=5jQ7V47HnJQ/addevent", newEvent);
-            // const res = await axios.post("https://api.render.com/deploy/srv-csak45t6l47c73f1bkr0?key=5jQ7V47HnJQ/addevent", newEvent);
+            const res = await axios.post("https://valt-be.onrender.com/addevent", newEvent);
+            // const res = await axios.post("https://valt-be.onrender.com/addevent", newEvent);
             console.log(res);
             alert("Post has been Added successfully");
             navigate("/")
