@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6"
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-const Footer = () => {
+const AdminFooter = () => {
     const navigate = useNavigate();
 
     const Addeventbutton = () => {
@@ -35,26 +35,25 @@ const Footer = () => {
                         </a>
                     </div>
                     </div>
-                    {/* <button onClick={Addeventbutton} className="w-[160px] flex justify-center items-center border-[2px] border-grayColor rounded-full text-white text-[16px] font-bold cursor-pointer
+                    <button onClick={Addeventbutton} className="w-[160px] flex justify-center items-center border-[2px] border-grayColor rounded-full text-white text-[16px] font-bold cursor-pointer
                     hover:bg-[#252b3b] active:bg-[#232e3b]">
                         Add event
-                    </button> */}
+                    </button>
                 </div>
 
             </div>
 
              <div className=" py-[24px] flex justify-between items-start md:flex-wrap px-[16px] md:px-[39px] lg:px-[160px]">
                 <div className="w-full flex sm:flex-col md:flex-row lg:flex-row md:justify-between">
-    
-                        <p className="text-[16px] font-normal text-grayColor mr-[90px] mb-4 text-left md:mr-[70px]">
-                            © 2024 Tavo Limited, Hong Kong
-                        </p>
-                        <a href='https://docs.google.com/document/d/1vbquA4ccboapW-FY0y7bRWYrArI5NMCNmsdUUdYEdNA/edit?usp=sharing' className="text-[16px] font-normal text-grayColor mr-[90px] mb-4 text-left md:mr-[70px]">
-                            Terms and conditions
-                        </a>
-                        <a href = "https://docs.google.com/document/d/1cCOg1z8-5mg9uJxBemO-7Xyp45uYALtCctCuXiRJgfc/edit?usp=sharing" className="text-[16px] font-normal text-grayColor mr-[90px] mb-4 text-left md:mr-[70px]">
-                            Privacy policy
-                        </a>
+                    <p className="text-[16px] font-normal text-grayColor mr-[90px] mb-4 text-left md:mr-[70px]">
+                        © 2024 Tavo Limited, Hong Kong
+                    </p>
+                    <a href='https://docs.google.com/document/d/1vbquA4ccboapW-FY0y7bRWYrArI5NMCNmsdUUdYEdNA/edit?usp=sharing' className="text-[16px] font-normal text-grayColor mr-[90px] mb-4 text-left md:mr-[70px]">
+                        Terms and conditions
+                    </a>
+                    <a href = "https://docs.google.com/document/d/1cCOg1z8-5mg9uJxBemO-7Xyp45uYALtCctCuXiRJgfc/edit?usp=sharing" className="text-[16px] font-normal text-grayColor mr-[90px] mb-4 text-left md:mr-[70px]">
+                        Privacy policy
+                    </a>
                 </div>
                 <div className="flex justify-start items-center md:w-full gap-[24px]">
                     <a href="https://t.me/valt_coin">
@@ -73,6 +72,6 @@ const Footer = () => {
     )
 };
 
-export default Footer;
+export default AdminFooter;
 
 

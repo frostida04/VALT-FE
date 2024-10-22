@@ -2,9 +2,23 @@ import BackHeader from "../layouts/BackHeader";
 import Footer from "../layouts/Footer";
 import Header from "../layouts/Header";
 import ConfirmInv from "../layouts/ConfirmInv";
-import { useEffect } from "react";
+import { useEffect , useState } from "react";
+import axios from "axios";
+import { useParams } from 'react-router-dom';
+
+
 const Invite = () => {
+    const { id } = useParams();
+    const [data, setData] = useState([]);
+    async function  getCard(){
+        const response = await axios.get(`http://localhost:5000/getevent/${id}`).then((res)=>{
+            setData(res.data);
+        })
+        console.log(response)
+    }
+
     useEffect(() => {
+        getCard();
         const unlisten = (() => {
             window.scrollTo(0, 0);
         });
@@ -16,7 +30,7 @@ const Invite = () => {
         <div>
             <Header/>
             <BackHeader/>
-            <ConfirmInv />
+            <ConfirmInv {...data}/>
             <Footer />
         </div>
     )

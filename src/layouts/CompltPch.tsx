@@ -1,6 +1,22 @@
 import Pchase_Con from "../Elements/Pchase_Con"; 
+import { useState ,useEffect } from "react";
+import axios from "axios";
+import { useParams } from 'react-router-dom';
+
+
 
 const CompltPch = () => {
+    const { id } = useParams();
+    const [data, setData] = useState([]);
+    async function  getCard(){
+        const response = await axios.get(`http://localhost:5000/getevent/${id}`).then((res)=>{
+            setData(res.data);
+        })
+        console.log(response)
+    }
+    useEffect(()=>{
+        getCard();
+    },[])
     return (
         <div className="flex w-full py-6">
             <div className="flex w-full py-5 lg:px-40">
@@ -8,7 +24,7 @@ const CompltPch = () => {
                     <div className=" flex w-full justify-center items-center p-6">
                         <p className="text-[36px] leading-[24px] sm:text-[28px] font-Poppins text-whiteTextColor">Purchase completed</p>
                     </div>
-                    <Pchase_Con />
+                    <Pchase_Con {...data}/>
                     <div className="flex flex-col w-full justify-center items-center pt-9">
                         <p className="text-[24px] leading-[32px] sm:text-[24px] font-Poppins text-whiteTextColor">Your personal link(s) to event stream</p>
                     </div>

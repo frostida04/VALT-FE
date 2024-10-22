@@ -3,9 +3,9 @@ import BackHeader from "../../layouts/BackHeader";
 import Card from "../../Elements/card";
 import TextSection from "../../Elements/TextSection";
 import MainCpn from "../../Elements/MainCpn";
-import Footer from "../../layouts/Footer";
-import OrganizeEventlistbar from "../../layouts/Admin/OrganizeEventlistbar";
-import Eventlist from "../../layouts/Admin/Eventlist";
+import OrganizerFooter from "../../layouts/OrganizerFooter";
+import OrganizerEventlistbar from "../../layouts/Admin/OrganizerEventlistbar";
+import Organizerslist from "../../layouts/Admin/Organizerslist";
 import { useEffect } from "react";
 const Organizers = () => {
     useEffect(() => {
@@ -18,13 +18,13 @@ const Organizers = () => {
     }, []);
 
     return (
-        <>
+        <div>
             {/* <Header/> */}
             <Header/>
-            <OrganizeEventlistbar />
-            <Eventlist />
-            <Footer/>
-        </>
+            <OrganizerEventlistbar />
+            <Organizerslist />
+            <OrganizerFooter/>
+        </div>
     )
 }
 

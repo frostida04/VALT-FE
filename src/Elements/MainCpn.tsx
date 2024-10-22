@@ -1,10 +1,13 @@
 import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-const MainCpn = () => {
+
+const MainCpn = ({gen_invvalt, vip_invvalt,vipb_invvalt} : any) => {
     const navigate = useNavigate();
+    const { id } = useParams();
     const handleClick = () => {
         // Navigate to "/about" when the button is clicked
-        navigate('/invite');
+        navigate(`/invite/${id}`);
       };
 
     return(
@@ -30,7 +33,7 @@ const MainCpn = () => {
 
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Video recordings of speeches</p>
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">(Uminers and KuCoin stages)</p>
-                        <div className="absolute bottom-[20px] text-[26px] leading-[24px] font-semibold text-greenColor">750</div>
+                        <div className="absolute bottom-[20px] text-[26px] leading-[24px] font-semibold text-greenColor">{gen_invvalt}</div>
                     </button>
 
                     <button className="relative w-[256px] md:w-full md:min-w-[256px] sm:w-full gap-3 h-[462px] bg-darkgrayBackgroundColor rounded-3xl flex items-center  flex-col p-6
@@ -46,7 +49,7 @@ const MainCpn = () => {
                         
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Video recordings of speeches</p>
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">(Uminers and KuCoin stages)</p>
-                        <div className="absolute bottom-[20px] text-[26px] leading-[24px] font-semibold text-greenColor">1500</div>
+                        <div className="absolute bottom-[20px] text-[26px] leading-[24px] font-semibold text-greenColor">{vip_invvalt}</div>
                     </button>
 
                     <button className="relative w-[256px] md:w-full md:min-w-[256px] sm:w-full gap-3 h-[462px] bg-darkgrayBackgroundColor rounded-3xl flex items-center  flex-col p-6
@@ -63,7 +66,7 @@ const MainCpn = () => {
                         
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Video recordings of speeches</p>
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">(Uminers and KuCoin stages)</p>
-                        <div className="absolute bottom-[20px] text-[26px] leading-[24px] font-semibold text-greenColor">3000
+                        <div className="absolute bottom-[20px] text-[26px] leading-[24px] font-semibold text-greenColor">{vipb_invvalt}
                             <span className="text-whiteTextColor"> × 2</span>
                         </div>
                     </button>

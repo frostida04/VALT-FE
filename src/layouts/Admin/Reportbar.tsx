@@ -5,17 +5,17 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const AdminEventlistbar = () => {
+const Reportbar = () => {
     const navigate = useNavigate();
-    const Eventbutton1 = () => {
+    const Eventbutton2 = () => {
         // Navigate to "/about" when the button is clicked
         navigate('/admin');
     };
-    const Organizersbutton1 = () => {
+    const Organizersbutton2 = () => {
         // Navigate to "/about" when the button is clicked
         navigate('/admin/organizer');
     };
-    const Reportbutton1 = () => {
+    const Reportbutton2 = () => {
         // Navigate to "/about" when the button is clicked
         navigate('/admin/report');
     };
@@ -27,13 +27,13 @@ const AdminEventlistbar = () => {
         <div className="w-full flex flex-col text-[#777E90]">
             <div className="w-full flex flex-row justify-center items-center">
                 <div className="flex my-[10px] sm:mt-8">
-                    <button onClick={Eventbutton1} className="block justify-center bg-transparent rounded-[14px] w-[118px] items-center text-grayColor hover:bg-[#58BD7D] hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c6e6d2]">
+                    <button onClick={Eventbutton2} className="block justify-center bg-transparent rounded-[14px] w-[118px] items-center text-grayColor hover:bg-[#58BD7D] hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c6e6d2]">
                         <p className="text-lg font-bold">Events</p>
                     </button>
-                    <button onClick={Organizersbutton1} className="block justify-center bg-transparent rounded-[14px] w-[150px] items-center text-grayColor hover:bg-[#58BD7D] hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c6e6d2]">
+                    <button onClick={Organizersbutton2} className="block justify-center bg-transparent rounded-[14px] w-[150px] items-center text-grayColor hover:bg-[#58BD7D] hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c6e6d2]">
                         <p className="text-lg font-bold text-current">Organizers</p>
                     </button>
-                    <button onClick={Reportbutton1} className="block justify-center bg-transparent rounded-[14px] w-[110px] items-center text-grayColor hover:bg-[#58BD7D] hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c6e6d2]">
+                    <button onClick={Reportbutton2} className="block justify-center bg-transparent rounded-[14px] w-[110px] items-center text-grayColor hover:bg-[#58BD7D] hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c6e6d2]">
                         <p className="text-lg font-bold text-current">Reports</p>
                     </button>
                 </div>
@@ -41,10 +41,8 @@ const AdminEventlistbar = () => {
             <div className="w-full flex ">
                 <div className="w-full flex md:py-[16px] lg:py-[16px] sm:py-[18px] px-[16px] md:px-[39px] lg:px-[160px] md:flex-row  sm:flex-col sm:gap-y-[21px]">
                     <div className="w-full flex-col font-Poppins flex ">
-                        <p className="text-[64px] font-bold text-[#FCFCFD]">Events</p>
-                        <p className="text-[#777E90]">Use $VALT tokens for your entertainment at events.</p>
-                        <div className="">
-                        </div>
+                        <p className="text-[64px] font-bold text-[#FCFCFD]">Report</p>
+
                     </div>
                 </div>
             </div>
@@ -94,4 +92,4 @@ const AdminEventlistbar = () => {
     )
 }
 
-export default AdminEventlistbar;
+export default Reportbar;

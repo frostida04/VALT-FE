@@ -1,12 +1,17 @@
 import Pchase_Con from "../Elements/Pchase_Con"; 
 import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
-const ConfirmInv = () => {
-    const navigate = useNavigate();
+import axios from "axios";
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react'
 
+const ConfirmInv = ({gen_invnum}:any) => {
+    const navigate = useNavigate();
+    const { id } = useParams();
+    const [data, setData] = useState([]);
     const handleClick = () => {
       // Navigate to "/about" when the button is clicked
-      navigate('/complete');
+      navigate(`/complete/${id}`);
     };
     const [inputValue, setInputValue] = useState('');
 
@@ -18,7 +23,15 @@ const ConfirmInv = () => {
         setInputValue(value);
         }
     };
-
+    async function  getCard(){
+        const response = await axios.get(`http://localhost:5000/getevent/${id}`).then((res)=>{
+            setData(res.data);
+        })
+        console.log(response)
+    }
+    useEffect(()=>{
+        getCard();
+    },[])
     return (
         <div className="flex w-full py-6">
             <div className="flex w-full py-5 lg:px-40">
@@ -26,12 +39,12 @@ const ConfirmInv = () => {
                     <div className=" flex w-full justify-center items-center p-6">
                         <p className="text-[36px] leading-[24px] sm:text-[28px] font-Poppins text-whiteTextColor">Purchase completed</p>
                     </div>
-                    <Pchase_Con />
+                    <Pchase_Con {...data}/>
                     <div className="flex flex-col w-full justify-center items-center pt-9">
                         <p className="text-[24px] leading-[32px] sm:text-[24px] font-Poppins text-whiteTextColor">Invitation:</p>
                     </div>
                     <div className="flex flex-col w-full justify-center items-center py-6">
-                        <button onClick={handleClick} className="hover:bg-[#252b3b] active:bg-[#232e3b] w-64 flex flex-col py-6 px-14 gap-x-8 sm:gap-y-8 rounded-3xl bg-grayBackgroundColor justify-center items-center">
+                        <div className="hover:bg-[#252b3b] active:bg-[#232e3b] w-64 flex flex-col py-6 px-14 gap-x-8 sm:gap-y-8 rounded-3xl bg-grayBackgroundColor justify-center items-center">
                             <div className="flex bg-grayColor rounded-full w-12 h-12 justify-center items-center">
                                 <div className="flex">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,9 +62,9 @@ const ConfirmInv = () => {
                             </div>
                             <div className="flex py-2 flex-col justify-center items-center">
                                 <p className="p-2 text-[16px] leading-[24px] font-Poppins text-whiteTextColor">General entrance</p>
-                                <p className="p-2 text-[46px] leading-[24px] font-Poppins text-whiteTextColor">× 1</p>
+                                <p className="p-2 text-[46px] leading-[24px] font-Poppins text-whiteTextColor">× {gen_invnum}</p>
                             </div>
-                        </button>
+                        </div>
                     </div>
                     <div className="flex flex-col justify-center items-center py-7">
                         <img src='/assets/img/qr-code 1.png' className='w-[180px] h-[180px] block'></img>

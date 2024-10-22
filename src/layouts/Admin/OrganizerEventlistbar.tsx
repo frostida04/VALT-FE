@@ -4,40 +4,10 @@ import { Label, Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@h
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-interface FormData {
-    eventName: string;
-    date: string;
-    localTime: string;
-    country: string;
-    city: string;
-    www: string;
-    type: string;
-    active: string;
-    onlineOffline: string;
-    link: string;
-    organizerId: string;
-    description: string;
-    endOfOfferDate: string;
-    endOfOfferTime: string;
-  }
 
-const OrganizeEventlistbar = () => {
-    const [formData, setFormData] = useState<FormData>({
-        eventName: '',
-        date: '',
-        localTime: '',
-        country: '',
-        city: '',
-        www: '',
-        type: '',
-        active: '',
-        onlineOffline: '',
-        link: '',
-        organizerId: '23e4234e234234',
-        description: '',
-        endOfOfferDate: '',
-        endOfOfferTime: '',
-    });
+
+const OrganizerEventlistbar = () => {
+
     const navigate = useNavigate();
     const Eventbutton = () => {
         // Navigate to "/about" when the button is clicked
@@ -45,22 +15,22 @@ const OrganizeEventlistbar = () => {
     };
     const Organizersbutton = () => {
         // Navigate to "/about" when the button is clicked
-        navigate('/admin_organizer');
+        navigate('/admin/organizer');
     };
     const Reportbutton = () => {
         // Navigate to "/about" when the button is clicked
-        navigate('/report');
+        navigate('/admin/report');
     };
     const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = event.target;
-        setFormData(prevState => ({
-          ...prevState,
-          [name]: value
-        }));
+        // setFormData(prevState => ({
+        //     ...prevState,
+        //     [name]: value
+        // }));
     };
     return(
         <div className="w-full flex flex-col text-[#777E90]">
-            <div className="w-full flex flex-row justify-center items-center">
+             <div className="w-full flex flex-row justify-center items-center">
                 <div className="flex my-[10px] sm:mt-8">
                     <button onClick={Eventbutton} className="block justify-center bg-transparent rounded-[14px] w-[118px] items-center text-grayColor hover:bg-[#58BD7D] hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c6e6d2]">
                         <p className="text-lg font-bold">Events</p>
@@ -77,8 +47,6 @@ const OrganizeEventlistbar = () => {
                 <div className="w-full flex md:py-[16px] lg:py-[16px] sm:py-[18px] px-[16px] md:px-[39px] lg:px-[160px] md:flex-row  sm:flex-col sm:gap-y-[21px]">
                     <div className="w-full flex-col font-Poppins flex ">
                         <p className="text-[64px] font-bold text-[#FCFCFD]">Organizers</p>
-                        <div className="">
-                        </div>
                     </div>
                 </div>
             </div>
@@ -128,4 +96,4 @@ const OrganizeEventlistbar = () => {
     )
 }
 
-export default OrganizeEventlistbar;
+export default OrganizerEventlistbar;

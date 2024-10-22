@@ -3,11 +3,11 @@ import BackHeader from "../../layouts/BackHeader";
 import Card from "../../Elements/card";
 import TextSection from "../../Elements/TextSection";
 import MainCpn from "../../Elements/MainCpn";
-import AdminFooter from "../../layouts/AdminFooter";
-import AdminEventlistbar from "../../layouts/Admin/AdminEventlistbar";
-import AdminEventlist from "../../layouts/Admin/AdminEventlist";
+import Footer from "../../layouts/Footer";
+import Reportbar from "../../layouts/Admin/Reportbar";
+import Reportcontent from "../../layouts/Admin/Reportcontent";
 import { useEffect } from "react";
-const AdminHome = () => {
+const Report = () => {
     useEffect(() => {
         const unlisten = (() => {
             window.scrollTo(0, 0);
@@ -18,14 +18,14 @@ const AdminHome = () => {
     }, []);
 
     return (
-        <>
+        <div>
             {/* <Header/> */}
             <Header/>
-            <AdminEventlistbar />
-            <AdminEventlist />
-            <AdminFooter/>
-        </>
+            <Reportbar />
+            <Reportcontent />
+            <Footer/>
+        </div>
     )
 }
 
-export default AdminHome;
+export default Report;

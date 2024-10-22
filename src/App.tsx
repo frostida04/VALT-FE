@@ -12,21 +12,24 @@ import Purchase from './pages/Purchase';
 import Complete from './pages/Complete';
 import Addevent from './pages/Add_event';
 import AdminHome from './pages/Admin/AdminHome';
-import Organizers from './pages/Admin/Organizers';
-
+import Addorganizers from './pages/Add_organizer';
+import Organizers from "./pages/Admin/Organizers";
+import Report from "./pages/Admin/Report";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={ <Home />}/>
-        <Route path="/detail" element={<Detail/>} />
-        <Route path="/invite" element={<Invite/>} />
-        <Route path="/purchase" element={<Purchase/>} />
-        <Route path="/complete" element={<Complete/>} />
-        <Route path="/addevent" element={<Addevent/>} />
+        <Route path="/detail/:id" element={<Detail/>} />
+        <Route path="/invite/:id" element={<Invite/>} />
+        <Route path="/purchase/:id" element={<Purchase/>} />
+        <Route path="/complete/:id" element={<Complete/>} />
+        <Route path="/admin/addevent" element={<Addevent/>} />
         <Route path="/admin" element={ <AdminHome />}/>
-        <Route path="/admin_organizer" element={ <Organizers />}/>
+        <Route path="/admin/organizer" element={ <Organizers />}/>
+        <Route path="/admin/report" element={ <Report />}/>
+        <Route path="/admin/addorganizer" element={ <Addorganizers />}/>
       </Routes>
     </BrowserRouter>
   );

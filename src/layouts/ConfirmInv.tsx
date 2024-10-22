@@ -1,10 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-const ConfirmInv = () => {
+import { useState ,useEffect } from "react";
+import axios from "axios";
+import { useParams } from 'react-router-dom';
+
+const ConfirmInv = ({vipb_invnum, gen_invnum, vip_invnum} : any) => {
     const navigate = useNavigate();
+    const { id } = useParams();
     const handleClick = () => {
         // Navigate to "/about" when the button is clicked
-        navigate('/purchase');
+        navigate(`/purchase/${id}`);
       };
       const handlemainpage = () => {
         // Navigate to "/about" when the button is clicked
@@ -38,7 +42,7 @@ const ConfirmInv = () => {
                     <div className="flex flex-col w-full justify-center items-center py-[25px]">
                         <p className="text-[36px] leading-[24px] sm:text-[28px] font-Poppins text-white">Your free invitation(s)</p>
                         <div className="w-full  flex flex-row justify-center items-center gap-[18px] pt-9">
-                            <p className="lg:text-[96px] md:text-[96px] sm:text-[56px] leading-[96px] font-bold text-greenColor">6</p>
+                            <p className="lg:text-[96px] md:text-[96px] sm:text-[56px] leading-[96px] font-bold text-greenColor">{gen_invnum}</p>
                         </div >
                         <p className="text-[24px] leading-[32px] sm:text-[28px] font-Poppins text-white">General entrance</p>
                     </div>

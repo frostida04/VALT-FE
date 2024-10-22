@@ -6,7 +6,7 @@ import MainCpn from "../Elements/MainCpn";
 import TextSection from "../Elements/TextSection";
 import Eventview from "../layouts/Eventview";
 import { useEffect } from "react";
-const Detail = () => {
+export default function Detail() {
     useEffect(() => {
         const unlisten = (() => {
             window.scrollTo(0, 0);
@@ -15,14 +15,13 @@ const Detail = () => {
             unlisten();
         };
     }, []);
+    
     return (
         <>
             <Header/>
             <BackHeader/>
-            <Eventview />
+            <Eventview/>
             <Footer/>
         </>
     )
 }
-
-export default Detail;

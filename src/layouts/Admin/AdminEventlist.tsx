@@ -1,16 +1,26 @@
-
 import { Link } from "react-router-dom"
-import { useState } from 'react'
-import Admincard from "../../Elements/Admin/Admincard"
+import { useState , useEffect } from 'react'
+import AdminCardsset from "../../Elements/Admin/Admincardsset"
 import { useNavigate } from 'react-router-dom';
-const Eventlist = () => {
+import axios from "axios";
+const AdminEventlist = () => {
     const navigate = useNavigate();
     const [isVisible, setIsVisible] = useState(true);
+
+    const [data,setData] = useState([]);
+    async function  getAllCard(){
+        const response = await axios.get("http://localhost:5000/getallevent").then((res)=>{
+            setData(res.data);
+        })
+        console.log(response);
+    }
+    useEffect(()=>{
+        getAllCard();
+    },[])
+
     const handleClick = () => {
       // Navigate to "/about" when the button is clicked
-      navigate('/detail');
     };
-    
 
     const handleButtonClick = () => {
         setIsVisible(!isVisible);
@@ -30,19 +40,13 @@ const Eventlist = () => {
                     </button>
                 </div>
             </div>)} */}
-            <div className="flex flex-col py-4 p-2">
-                <div className="justify-normal items-start my-4 rounded-3xl focus:outline-none focus:ring focus:ring-greenColor" >
-                    <Admincard />
-                </div>
-                <button className="justify-normal items-start my-4 rounded-3xl focus:outline-none focus:ring focus:ring-greenColor" onClick={handleClick}>
-                    <Admincard />
-                </button>
-                <button className="justify-normal items-start my-4 rounded-3xl focus:outline-none focus:ring focus:ring-greenColor" onClick={handleClick}>
-                    <Admincard />
-                </button>
+            <div className="flex flex-col py-4 p-2 w-full">
+                <AdminCardsset data={data}  />
+                {/* <button className="justify-normal items-start my-4 rounded-3xl focus:outline-none focus:ring focus:ring-greenColor" onClick={handleClick}>
+                </button> */}
             </div>
         </div>
     )
 }
 
-export default Eventlist;
+export default AdminEventlist;

@@ -2,66 +2,35 @@ import React, { useState, ChangeEvent, useContext, FormEvent, useRef } from 'rea
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+
 interface FormData {
-  eventName: string;
-  date: string;
-  localTime: string;
+  organizer: string;
+  name: string;
+  surname: string;
   country: string;
   city: string;
-  www: string;
-  type: string;
-  active: string;
-  onlineOffline: string;
-  link: string;
+  telegram: string;
+  phone: string;
+  email: string;
+  wallet: string;
   organizerId: string;
-  description: string;
-  invitationstitlegen: string,
-  invitationsnumbergen: string,
-  invitationslimitgen:string,
-  invitationsvaltgen:string,
-  invitationstitlevip: string,
-  invitationsnumbervip: string,
-  invitationslimitvip:string,
-  invitationsvaltvip:string,
-  invitationstitlebull: string,
-  invitationsnumberbull: string,
-  invitationslimitbull:string,
-  invitationsvaltbull:string,
-  endOfOfferDate: string;
-  endOfOfferTime: string;
 }
 
 
 
-const Addevents: React.FC = () =>  {
+const Addorganizer: React.FC = () =>  {
 
     const [formData, setFormData] = useState<FormData>({
-        eventName: '',
-        date: '',
-        localTime: '',
+        organizer: '',
+        name: '',
+        surname: '',
         country: '',
         city: '',
-        www: '',
-        type: 'Soccer',
-        active: 'active',
-        onlineOffline: 'Online',
-        link: '',
+        telegram: '',
+        phone: '',
+        email: '',
+        wallet: '',
         organizerId: '23e4234e234234',
-        description: '',
-        invitationsnumbergen: '',
-        invitationstitlegen: '',
-        invitationslimitgen:'',
-        invitationsvaltgen:'',
-        invitationsnumbervip: '',
-        invitationstitlevip: '',
-        invitationslimitvip:'',
-        invitationsvaltvip:'',
-        invitationsnumberbull: '',
-        invitationstitlebull: '',
-        invitationslimitbull:'',
-        invitationsvaltbull:'',
-        endOfOfferDate: '',
-        endOfOfferTime: '',
     });
 
     const navigate = useNavigate();
@@ -99,16 +68,16 @@ const Addevents: React.FC = () =>  {
         // }
 
         try {
-            const res = await axios.post("http://localhost:5000/addevent", newEvent);
+            const res = await axios.post("http://localhost:5000/addorganizer", newEvent);
             console.log(res);
             alert("Post has been Added successfully");
-            navigate("/")
+            navigate("/Admin")
           // window.location.replace("http://localhost:8080/post/" + res.data._id);
         } catch (err) {}
     }
     const handleCancel = async (e : any) =>
     {
-        navigate('/');
+        navigate('/admin');
     }
     //   const  handleInvitationChange = (index: number, field: keyof Invitation) => (event: ChangeEvent<HTMLInputElement>) => {
     //     // const newInvitations = formData.invitations.map((invitation, i) => {
@@ -127,9 +96,123 @@ const Addevents: React.FC = () =>  {
             <div className="flex w-full py-5 lg:px-40">
                 <div className="flex flex-col w-full bg-darkDarkColor rounded-md p-10 sm:px-4">
                     <div className=" flex w-full justify-center items-center">
-                        <p className="text-[36px] leading-[24px] sm:text-[28px] font-Poppins text-whiteTextColor">Add event</p>
+                        <p className="text-[36px] leading-[24px] sm:text-[28px] font-Poppins text-whiteTextColor">Add organizer</p>
                     </div>
-                    <div className="flex flex-col lg:px-[104px] lg:pt-[65px] ">
+                    <div className='flex flex-col lg:px-[104px] lg:pt-[65px]'>
+                        <div className="grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 py-10 justify-center items-center gap-8">
+                            <div className="flex flex-col w-full gap-3">
+                                <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Organizer</p>
+                                    <input
+                                    type="text"
+                                    name="organizer"
+                                    placeholder="organizer"
+                                    className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
+                                    value={formData.organizer}
+                                    onChange={handleChange}
+                                    />
+                            </div>
+                            <div className="flex flex-col w-full gap-3">
+                                <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Name</p>
+                                    <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Name"
+                                    className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    />
+                            </div>
+                            <div className="flex flex-col w-full gap-3">
+                                <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Surname</p>
+                                    <input
+                                    type="text"
+                                    name="surname"
+                                    placeholder="surname"
+                                    className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
+                                    value={formData.surname}
+                                    onChange={handleChange}
+                                    />
+                            </div>
+                            <div className="flex flex-col w-full gap-3">
+                                <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Country</p>
+                                    <input
+                                    type="text"
+                                    name="country"
+                                    placeholder="country"
+                                    className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
+                                    value={formData.country}
+                                    onChange={handleChange}
+                                    />
+                            </div>
+                            <div className="flex flex-col w-full gap-3">
+                                <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">City</p>
+                                    <input
+                                    type="text"
+                                    name="city"
+                                    placeholder="city"
+                                    className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
+                                    value={formData.city}
+                                    onChange={handleChange}
+                                    />
+                            </div>
+                            <div className="flex flex-col w-full gap-3">
+                                <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Telegram</p>
+                                    <input
+                                    type="text"
+                                    name="telegram"
+                                    placeholder="Telegram"
+                                    className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
+                                    value={formData.telegram}
+                                    onChange={handleChange}
+                                    />
+                            </div>
+                            <div className="flex flex-col w-full gap-3">
+                                <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Phone</p>
+                                    <input
+                                    type="Phone"
+                                    name="phone"
+                                    placeholder="Phone"
+                                    className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
+                                    value={formData.phone}
+                                    onChange={handleChange}
+                                    />
+                            </div>
+                            <div className="flex flex-col w-full gap-3">
+                                <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Email</p>
+                                    <input
+                                    type="Email"
+                                    name="email"
+                                    placeholder="Email"
+                                    className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    />
+                            </div>
+                            <div className="flex flex-col w-full gap-3">
+                                <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Wallet</p>
+                                    <input
+                                    type="text"
+                                    name="wallet"
+                                    placeholder="Wallet"
+                                    className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
+                                    value={formData.wallet}
+                                    onChange={handleChange}
+                                    />
+                            </div>
+                            <div className="lg:col-start-1 lg:col-end-4 flex flex-col w-full gap-3">
+                                <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Organizer id</p>
+                                    <input
+                                    type="text"
+                                    name="organizerId"
+                                    placeholder="organizerId"
+                                    className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
+                                    value={formData.organizerId}
+                                    onChange={handleChange}
+                                    />
+                            </div>
+                        </div>
+                    </div>
+                    {/* <div className="flex flex-col lg:px-[104px] lg:pt-[65px] ">
                         <div className="flex sm:flex-col py-10 justify-center items-center gap-8">
                             <div className="block w-[256px] sm:w-full pr-15">
                                 <div className="w-[196px] sm:w-[196px] h-[196px] p-5 flex border-dashed border-greenColor border-2 items-center rounded-[12px] bg-transparent justify-end">
@@ -445,10 +528,10 @@ const Addevents: React.FC = () =>  {
                             <div className="flex flex-col w-full gap-3">
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="flex flex-col justify-center items-center p-4">
                         <div className="flex w-full p-4 justify-center items-center">
-                            <button className="w-[184px] py-[16px] px-[24px] rounded-[90px] bg-greenColor flex justify-center items-center text-[16px] font-bold color-dark hover:bg-[#8ed6a9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c6e6d2]" onClick={handleSubmit} >DONE</button>
+                            <button className="w-[184px] py-[16px] px-[24px] rounded-[90px] bg-greenColor flex justify-center items-center text-[16px] font-bold color-dark hover:bg-[#8ed6a9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c6e6d2]" onClick={handleSubmit} >SAVE</button>
                         </div>
                         <div className="flex w-full p-4 justify-center items-center">
                             <button className="w-[184px] py-[16px] px-[24px] rounded-[90px] bg-transparent flex justify-center items-center text-[16px] font-bold text-grayTextColor hover:bg-[#252b3b] active:bg-[#232e3b]" onClick={handleCancel}>CANCEL</button>
@@ -460,4 +543,4 @@ const Addevents: React.FC = () =>  {
     )
 }
 
-export default Addevents;
+export default Addorganizer;

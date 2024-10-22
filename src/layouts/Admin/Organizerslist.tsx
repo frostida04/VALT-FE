@@ -1,35 +1,34 @@
-
 import { Link } from "react-router-dom"
-import { useState , useEffect} from 'react'
-import Cards from "../Elements/Cardlist"
+import { useState , useEffect } from 'react'
+import OrgCardsset from "../../Elements/Admin/OrgCardsset"
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
-
-const Eventlist = () => {
-
+const Organizerslist = () => {
     const navigate = useNavigate();
     const [isVisible, setIsVisible] = useState(true);
-    const handleClick = () => {
-      // Navigate to "/about" when the button is clicked
-        navigate('/detail');
-    };
 
     const [data,setData] = useState([]);
     async function  getAllCard(){
-        const response = await axios.get("http://localhost:5000/getallevent").then((res)=>{
+        const response = await axios.get("http://localhost:5000/getorganizer").then((res)=>{
             setData(res.data);
         })
-        console.log(response)
+        console.log(response);
     }
     useEffect(()=>{
         getAllCard();
     },[])
+
+    const handleClick = () => {
+      // Navigate to "/about" when the button is clicked
+    };
+
     const handleButtonClick = () => {
         setIsVisible(!isVisible);
     };
     return(
         <div className="w-full flex flex-col text-[#777E90] lg:px-40 md:px-[39px] my-2">
-            {isVisible && (
+
+            {/* {isVisible && (
             <div className="w-full flex py-4">
                 <div className="flex flex-row w-full bg-darkgrayBackgroundColor md:rounded-full lg:rounded-full py-3 pl-[65px] pr-2 justify-between items-center">
                     <p className="text-white font-Poppins my-auto text-base">
@@ -41,9 +40,9 @@ const Eventlist = () => {
                         </svg>
                     </button>
                 </div>
-            </div>)}
+            </div>)} */}
             <div className="flex flex-col py-4 p-2 w-full">
-                <Cards data={data}/>
+                <OrgCardsset data={data}  />
                 {/* <button className="justify-normal items-start my-4 rounded-3xl focus:outline-none focus:ring focus:ring-greenColor" onClick={handleClick}>
                 </button> */}
             </div>
@@ -51,4 +50,4 @@ const Eventlist = () => {
     )
 }
 
-export default Eventlist;
+export default Organizerslist;
