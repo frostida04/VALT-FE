@@ -1,7 +1,47 @@
 import { useNavigate } from "react-router-dom";
 import { MetaMaskUIProvider } from "@metamask/sdk-react-ui"
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import {
+    useAccount,
+    useBalance
+} from "wagmi";
+import { useEffect, useState } from "react";
+import { VALT_Token_Address, USDT_Token_Address, ETH_Token_Address, BTC_Token_Address } from "../utils";
+
 const Header = () => {
+    const [valtBalance, setValtBalance] = useState<number | undefined>(undefined);
+    const [usdtBalance, setUsdtBalance] = useState<number | undefined>(undefined);
+    const [ethBalance, setEthBalance] = useState<number | undefined>(undefined);
+    const [btcBalance, setBtcBalance] = useState<number | undefined>(undefined);
+
+    const { address } = useAccount();
+
+    const { data: valtData } = useBalance({
+        address: address,
+        token: VALT_Token_Address
+    });
+
+    const { data: usdtData } = useBalance({
+        address: address,
+        token: USDT_Token_Address
+    });
+
+    const { data: ethData } = useBalance({
+        address: address,
+        token: ETH_Token_Address
+    });
+
+    const { data: btcData } = useBalance({
+        address: address,
+        token: BTC_Token_Address
+    });
+
+    useEffect(() => {
+        if (valtData) setValtBalance(Number(valtData.formatted));
+        if (usdtData) setUsdtBalance(Number(usdtData.formatted));
+        if (ethData) setEthBalance(Number(ethData.formatted));
+        if (btcData) setBtcBalance(Number(btcData.formatted));
+    }, [valtData, usdtData, ethData, btcData]);
 
     const navigate = useNavigate();
     const handleClick = () => {
@@ -19,24 +59,32 @@ const Header = () => {
                     <div className="flex flex-row items-center sm:hidden md:order-1">
                         <img src="/assets/img/valt.png" className="w-10 h-10" alt="VALT"></img>
                         <p className="ml-[10px] text-[12px] font-bold text-greyfont">$VALT</p>
-                        <p className="pl-6 text-[20px] md:text-[14px] font-semibold">1.00</p>
+                        <p className="pl-6 text-[20px] md:text-[14px] font-semibold">
+                            {!valtBalance ? "0" : Number(valtBalance) / 10 ** 6}
+                        </p>
                     </div>
                     <div className="flex flex-row items-center sm:hidden">
                         <img src="/assets/img/USDT.png" className="w-10 h-10" alt="USDT"></img>
                         <p className="ml-[10px] text-[12px] font-bold text-greyfont">$USDT</p>
-                        <p className="pl-6  text-[18px] md:text-[12px] font-semibold">18.00</p>
+                        <p className="pl-6  text-[18px] md:text-[12px] font-semibold">
+                            {!usdtBalance ? "0" : Number(usdtBalance) / 10 ** 6}
+                        </p>
                     </div>
 
                     <div className="flex flex-row items-center sm:hidden">
                         <img src="/assets/img/BTC.png" className="w-10 h-10" alt="BTC"></img>
                         <p className="ml-[10px] text-[12px] font-bold text-greyfont">$BtC</p>
-                        <p className="pl-6  text-[18px] md:text-[12px] font-semibold">N/A</p>
+                        <p className="pl-6  text-[18px] md:text-[12px] font-semibold">
+                            {!btcBalance ? "0" : Number(btcBalance) / 10 ** 6}
+                        </p>
                     </div>
 
                     <div className="flex flex-row items-center sm:hidden">
                         <img src="/assets/img/Eth.png" className="w-10 h-10" alt="ETH"></img>
                         <p className="ml-[10px] text-[12px] font-bold text-greyfont">$ETH</p>
-                        <p className="pl-6  text-[18px] md:text-[12px] font-semibold">N/A</p>
+                        <p className="pl-6  text-[18px] md:text-[12px] font-semibold">
+                            {!ethBalance ? "0" : Number(ethBalance) / 10 ** 6}
+                        </p>
                     </div>
 
                 </div>

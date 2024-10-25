@@ -18,7 +18,7 @@ interface FormData {
     description: string;
     endOfOfferDate: string;
     endOfOfferTime: string;
-  }
+}
 
 const Eventlistbar = () => {
     const [formData, setFormData] = useState<FormData>({
@@ -36,16 +36,16 @@ const Eventlistbar = () => {
         description: '',
         endOfOfferDate: '',
         endOfOfferTime: '',
-      });
-    
+    });
+
     const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = event.target;
         setFormData(prevState => ({
-          ...prevState,
-          [name]: value
+            ...prevState,
+            [name]: value
         }));
     };
-    return(
+    return (
         <div className="w-full flex flex-col text-[#777E90]">
             <div className="w-full flex ">
                 <div className="w-full flex md:py-[16px] lg:py-[16px] sm:py-[18px] px-[16px] md:px-[39px] lg:px-[160px] md:flex-row  sm:flex-col sm:gap-y-[21px]">
@@ -71,8 +71,8 @@ const Eventlistbar = () => {
                         />
                         <div className="inline-flex w-8 h-8 px-auto items-center py-auto rounded-[16px] ring-2 ring-inset ring-current">
                             <svg className="mx-auto" width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15 8C15 12.32 8 19.375 8 19.375C8 19.375 1 12.32 1 8C1 3.57 4.617 1 8 1C11.383 1 15 3.57 15 8Z" stroke="#777E91" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
-                                <path d="M8 10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10Z" stroke="#777E91" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+                                <path d="M15 8C15 12.32 8 19.375 8 19.375C8 19.375 1 12.32 1 8C1 3.57 4.617 1 8 1C11.383 1 15 3.57 15 8Z" stroke="#777E91" strokeWidth="2" stroke-miterlimit="10" strokeLinecap="square"/>
+                                <path d="M8 10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10Z" stroke="#777E91" strokeWidth="2" stroke-miterlimit="10" strokeLinecap="square"/>
                             </svg>
                         </div>
                     </div>
@@ -82,7 +82,7 @@ const Eventlistbar = () => {
                         </span>
                         <div className="inline-flex w-8 h-8 px-auto items-center py-auto rounded-[16px] ring-2 ring-inset ring-current">
                             <svg className="mx-auto" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.20711 0.792893C8.81658 0.402369 8.18342 0.402369 7.79289 0.792893L5 3.58579L2.20711 0.792893C1.81658 0.402369 1.18342 0.402369 0.792894 0.792893C0.402369 1.18342 0.402369 1.81658 0.792894 2.20711L4.29289 5.70711C4.68342 6.09763 5.31658 6.09763 5.70711 5.70711L9.20711 2.20711C9.59763 1.81658 9.59763 1.18342 9.20711 0.792893Z" fill="#777E91"/>
+                                <path fillRule="evenodd" clipRule="evenodd" d="M9.20711 0.792893C8.81658 0.402369 8.18342 0.402369 7.79289 0.792893L5 3.58579L2.20711 0.792893C1.81658 0.402369 1.18342 0.402369 0.792894 0.792893C0.402369 1.18342 0.402369 1.81658 0.792894 2.20711L4.29289 5.70711C4.68342 6.09763 5.31658 6.09763 5.70711 5.70711L9.20711 2.20711C9.59763 1.81658 9.59763 1.18342 9.20711 0.792893Z" fill="#777E91"/>
                             </svg>
                         </div>
                     </div>
