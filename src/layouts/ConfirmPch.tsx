@@ -1,38 +1,36 @@
-import Pchase_Con from "../Elements/Pchase_Con"; 
+import Pchase_Con from "../Elements/Pchase_Con";
 import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react'
 
-const ConfirmInv = ({gen_invnum}:any) => {
+const ConfirmInv = ({ gen_invnum }: any) => {
     const navigate = useNavigate();
     const { id } = useParams();
     const [data, setData] = useState([]);
     const handleClick = () => {
-      // Navigate to "/about" when the button is clicked
-      navigate(`/complete/${id}`);
+        navigate(`/complete/${id}`);
     };
     const [inputValue, setInputValue] = useState('');
 
-    const handleChange = (event : any) => {
+    const handleChange = (event: any) => {
         const value = event.target.value;
 
         // Limit input to 4 characters
         if (value.length <= 30) {
-        setInputValue(value);
+            setInputValue(value);
         }
     };
-    async function  getCard(){
-        // const response = await axios.get(`https://valt-be.onrender.com/getevent/${id}`).then((res)=>{
-        const response = await axios.get(`https://valt-be.onrender.com/getevent/${id}`).then((res)=>{
+    async function getCard() {
+        const response = await axios.get(`https://valt-be.onrender.com/getevent/${id}`).then((res) => {
             setData(res.data);
         })
         console.log(response)
     }
-    useEffect(()=>{
+    useEffect(() => {
         getCard();
-    },[])
+    }, [])
     return (
         <div className="flex w-full py-6">
             <div className="flex w-full py-5 lg:px-40">
@@ -40,7 +38,7 @@ const ConfirmInv = ({gen_invnum}:any) => {
                     <div className=" flex w-full justify-center items-center p-6">
                         <p className="text-[36px] leading-[24px] sm:text-[28px] font-Poppins text-whiteTextColor">Purchase completed</p>
                     </div>
-                    <Pchase_Con {...data}/>
+                    <Pchase_Con {...data} />
                     <div className="flex flex-col w-full justify-center items-center pt-9">
                         <p className="text-[24px] leading-[32px] sm:text-[24px] font-Poppins text-whiteTextColor">Invitation:</p>
                     </div>
@@ -50,12 +48,12 @@ const ConfirmInv = ({gen_invnum}:any) => {
                                 <div className="flex">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_1_9052)">
-                                            <path d="M3 1L15 5V23L3 19V1ZM3 1H21V19H18" stroke="#FCFCFD" stroke-width="2" stroke-miterlimit="10"/>
-                                            <path d="M11 13V15" stroke="#FCFCFD" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M3 1L15 5V23L3 19V1ZM3 1H21V19H18" stroke="#FCFCFD" strokeWidth="2" stroke-miterlimit="10" />
+                                            <path d="M11 13V15" stroke="#FCFCFD" strokeWidth="2" stroke-miterlimit="10" strokeLinecap="square" />
                                         </g>
                                         <defs>
                                             <clipPath id="clip0_1_9052">
-                                                <rect width="24" height="24" fill="white"/>
+                                                <rect width="24" height="24" fill="white" />
                                             </clipPath>
                                         </defs>
                                     </svg>
@@ -76,7 +74,7 @@ const ConfirmInv = ({gen_invnum}:any) => {
                             <div className="flex flex-col w-full justify-center items-start">
                                 <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor py-4">Send to email:</p>
                                 <input type="text" value={inputValue} onChange={handleChange} className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor h-12 w-[316px] sm:w-[294px] pl-4 pr-2 py-2 flex ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent justify-end">
-                                    
+
                                 </input>
                             </div>
                             <div className="flex w-full pt-14 sm:pt-8 justify-center items-center">

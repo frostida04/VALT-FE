@@ -1,39 +1,39 @@
-import React, { useState, ChangeEvent, FormEvent, useRef } from 'react';
+import React, { useState } from 'react';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 interface FormData {
-  eventName: string;
-  date: string;
-  localTime: string;
-  country: string;
-  city: string;
-  www: string;
-  type: string;
-  active: string;
-  onlineOffline: string;
-  link: string;
-  organizerId: string;
-  description: string;
-  invitationstitlegen: string,
-  invitationsnumbergen: string,
-  invitationslimitgen:string,
-  invitationsvaltgen:string,
-  invitationstitlevip: string,
-  invitationsnumbervip: string,
-  invitationslimitvip:string,
-  invitationsvaltvip:string,
-  invitationstitlebull: string,
-  invitationsnumberbull: string,
-  invitationslimitbull:string,
-  invitationsvaltbull:string,
-  endOfOfferDate: string;
-  endOfOfferTime: string;
+    eventName: string;
+    date: string;
+    localTime: string;
+    country: string;
+    city: string;
+    www: string;
+    type: string;
+    active: string;
+    onlineOffline: string;
+    link: string;
+    organizerId: string;
+    description: string;
+    invitationstitlegen: string,
+    invitationsnumbergen: string,
+    invitationslimitgen: string,
+    invitationsvaltgen: string,
+    invitationstitlevip: string,
+    invitationsnumbervip: string,
+    invitationslimitvip: string,
+    invitationsvaltvip: string,
+    invitationstitlebull: string,
+    invitationsnumberbull: string,
+    invitationslimitbull: string,
+    invitationsvaltbull: string,
+    endOfOfferDate: string;
+    endOfOfferTime: string;
 }
 
 
 
-const Addevents: React.FC = () =>  {
+const Addevents: React.FC = () => {
 
     const [formData, setFormData] = useState<FormData>({
         eventName: '',
@@ -50,40 +50,40 @@ const Addevents: React.FC = () =>  {
         description: '',
         invitationsnumbergen: '',
         invitationstitlegen: '',
-        invitationslimitgen:'',
-        invitationsvaltgen:'',
+        invitationslimitgen: '',
+        invitationsvaltgen: '',
         invitationsnumbervip: '',
         invitationstitlevip: '',
-        invitationslimitvip:'',
-        invitationsvaltvip:'',
+        invitationslimitvip: '',
+        invitationsvaltvip: '',
         invitationsnumberbull: '',
         invitationstitlebull: '',
-        invitationslimitbull:'',
-        invitationsvaltbull:'',
+        invitationslimitbull: '',
+        invitationsvaltbull: '',
         endOfOfferDate: '',
         endOfOfferTime: '',
     });
 
     const navigate = useNavigate();
 
-    const handleChange = (e : any) => {
+    const handleChange = (e: any) => {
         const { name, value } = e.target;
         console.log(e.target.value);
         setFormData(prevState => ({
-        ...prevState,
-        [name]: value
+            ...prevState,
+            [name]: value
         }));
     };
 
     const [file, setFile] = useState();
 
-    function handleFileChange(e : any) {
+    function handleFileChange(e: any) {
         console.log(e.target.files);
         // setFile(URL.createObjectURL(e.target.files[0]));
 
     }
 
-    const handleSubmit = async (e : any) => {
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
         const newEvent = formData;
         console.log(newEvent);
@@ -105,11 +105,10 @@ const Addevents: React.FC = () =>  {
             console.log(res);
             alert("Post has been Added successfully");
             navigate("/")
-          // window.location.replace("http://localhost:8080/post/" + res.data._id);
-        } catch (err) {}
+            // window.location.replace("http://localhost:8080/post/" + res.data._id);
+        } catch (err) { }
     }
-    const handleCancel = async (e : any) =>
-    {
+    const handleCancel = async (e: any) => {
         navigate('/');
     }
     //   const  handleInvitationChange = (index: number, field: keyof Invitation) => (event: ChangeEvent<HTMLInputElement>) => {
@@ -136,7 +135,7 @@ const Addevents: React.FC = () =>  {
                             <div className="block w-[256px] sm:w-full pr-15">
                                 <div className="w-[196px] sm:w-[196px] h-[196px] p-5 flex border-dashed border-greenColor border-2 items-center rounded-[12px] bg-transparent justify-end">
                                     <input type="file" onChange={handleFileChange} className="w-full h-full flex  gap-8 rounded-2xl bg-grayColor">
-                                    
+
                                     </input>
                                 </div>
                             </div>
@@ -168,7 +167,7 @@ const Addevents: React.FC = () =>  {
                                             value={formData.localTime}
                                             onChange={handleChange}
                                         />
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -185,7 +184,7 @@ const Addevents: React.FC = () =>  {
                                         value={formData.country}
                                         onChange={handleChange}
                                     />
-        
+
                                 </div>
                                 <div className="flex flex-col sm:w-full gap-3">
                                     <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">City</p>
@@ -212,13 +211,13 @@ const Addevents: React.FC = () =>  {
                                 </div>
                                 <div className="relative flex flex-col sm:w-full gap-3">
                                     <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Type</p>
-                                    <select name="type"  value={formData.type} className="h-12 w-full pl-5 text-whiteTextColor text-[24px] leading-[24px] flex appearance-none pr-[50px] ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent"  onChange={handleChange}>
+                                    <select name="type" value={formData.type} className="h-12 w-full pl-5 text-whiteTextColor text-[24px] leading-[24px] flex appearance-none pr-[50px] ring-2 ring-inset ring-greenColor items-center rounded-[12px] bg-transparent" onChange={handleChange}>
                                         <option value="Soccer" className='text-grayTextColor text-[24px] leading-[24px]'>Soccer</option>
                                         <option value="Concert" className='text-grayTextColor text-[24px] leading-[24px]'>Concert</option>
                                     </select>
                                     <div className="absolute pt-10 h-full pointer-events-none inset-y-0 right-0 flex items-center px-2 text-gray-700">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2071 9.79289C15.8166 9.40237 15.1834 9.40237 14.7929 9.79289L12 12.5858L9.20711 9.79289C8.81658 9.40237 8.18342 9.40237 7.79289 9.79289C7.40237 10.1834 7.40237 10.8166 7.79289 11.2071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L16.2071 11.2071C16.5976 10.8166 16.5976 10.1834 16.2071 9.79289Z" fill="#FCFCFD"/>
+                                            <path fillRule="evenodd" clipRule="evenodd" d="M16.2071 9.79289C15.8166 9.40237 15.1834 9.40237 14.7929 9.79289L12 12.5858L9.20711 9.79289C8.81658 9.40237 8.18342 9.40237 7.79289 9.79289C7.40237 10.1834 7.40237 10.8166 7.79289 11.2071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L16.2071 11.2071C16.5976 10.8166 16.5976 10.1834 16.2071 9.79289Z" fill="#FCFCFD" />
                                         </svg>
                                     </div>
                                 </div>
@@ -230,7 +229,7 @@ const Addevents: React.FC = () =>  {
                                     </select>
                                     <div className="absolute pt-10 h-full pointer-events-none inset-y-0 right-0 flex items-center px-2 text-gray-700">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2071 9.79289C15.8166 9.40237 15.1834 9.40237 14.7929 9.79289L12 12.5858L9.20711 9.79289C8.81658 9.40237 8.18342 9.40237 7.79289 9.79289C7.40237 10.1834 7.40237 10.8166 7.79289 11.2071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L16.2071 11.2071C16.5976 10.8166 16.5976 10.1834 16.2071 9.79289Z" fill="#FCFCFD"/>
+                                            <path fillRule="evenodd" clipRule="evenodd" d="M16.2071 9.79289C15.8166 9.40237 15.1834 9.40237 14.7929 9.79289L12 12.5858L9.20711 9.79289C8.81658 9.40237 8.18342 9.40237 7.79289 9.79289C7.40237 10.1834 7.40237 10.8166 7.79289 11.2071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L16.2071 11.2071C16.5976 10.8166 16.5976 10.1834 16.2071 9.79289Z" fill="#FCFCFD" />
                                         </svg>
                                     </div>
                                 </div>
@@ -242,7 +241,7 @@ const Addevents: React.FC = () =>  {
                                     </select>
                                     <div className="absolute pt-10 h-full pointer-events-none inset-y-0 right-0 flex items-center px-2 text-gray-700">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2071 9.79289C15.8166 9.40237 15.1834 9.40237 14.7929 9.79289L12 12.5858L9.20711 9.79289C8.81658 9.40237 8.18342 9.40237 7.79289 9.79289C7.40237 10.1834 7.40237 10.8166 7.79289 11.2071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L16.2071 11.2071C16.5976 10.8166 16.5976 10.1834 16.2071 9.79289Z" fill="#FCFCFD"/>
+                                            <path fillRule="evenodd" clipRule="evenodd" d="M16.2071 9.79289C15.8166 9.40237 15.1834 9.40237 14.7929 9.79289L12 12.5858L9.20711 9.79289C8.81658 9.40237 8.18342 9.40237 7.79289 9.79289C7.40237 10.1834 7.40237 10.8166 7.79289 11.2071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L16.2071 11.2071C16.5976 10.8166 16.5976 10.1834 16.2071 9.79289Z" fill="#FCFCFD" />
                                         </svg>
                                     </div>
                                 </div>

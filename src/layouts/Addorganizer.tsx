@@ -1,24 +1,22 @@
-import React, { useState, ChangeEvent, useContext, FormEvent, useRef } from 'react';
+import React, { useState } from 'react';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 
 interface FormData {
-  organizer: string;
-  name: string;
-  surname: string;
-  country: string;
-  city: string;
-  telegram: string;
-  phone: string;
-  email: string;
-  wallet: string;
-  organizerId: string;
+    organizer: string;
+    name: string;
+    surname: string;
+    country: string;
+    city: string;
+    telegram: string;
+    phone: string;
+    email: string;
+    wallet: string;
+    organizerId: string;
 }
 
-
-
-const Addorganizer: React.FC = () =>  {
+const Addorganizer: React.FC = () => {
 
     const [formData, setFormData] = useState<FormData>({
         organizer: '',
@@ -35,23 +33,23 @@ const Addorganizer: React.FC = () =>  {
 
     const navigate = useNavigate();
 
-    const handleChange = (e : any) => {
+    const handleChange = (e: any) => {
         const { name, value } = e.target;
         console.log(e.target.value);
         setFormData(prevState => ({
-        ...prevState,
-        [name]: value
+            ...prevState,
+            [name]: value
         }));
     };
 
     const [file, setFile] = useState();
 
-    function handleFileChange(e : any) {
+    function handleFileChange(e: any) {
         console.log(e.target.files);
         // setFile(URL.createObjectURL(e.target.files[0]));
     }
 
-    const handleSubmit = async (e : any) => {
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
         const newEvent = formData;
         console.log(newEvent);
@@ -73,11 +71,10 @@ const Addorganizer: React.FC = () =>  {
             console.log(res);
             alert("Post has been Added successfully");
             navigate("/Admin")
-          // window.location.replace("http://localhost:8080/post/" + res.data._id);
-        } catch (err) {}
+            // window.location.replace("http://localhost:8080/post/" + res.data._id);
+        } catch (err) { }
     }
-    const handleCancel = async (e : any) =>
-    {
+    const handleCancel = async (e: any) => {
         navigate('/admin');
     }
     //   const  handleInvitationChange = (index: number, field: keyof Invitation) => (event: ChangeEvent<HTMLInputElement>) => {
@@ -103,113 +100,113 @@ const Addorganizer: React.FC = () =>  {
                         <div className="grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 py-10 justify-center items-center gap-8">
                             <div className="flex flex-col w-full gap-3">
                                 <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Organizer</p>
-                                    <input
+                                <input
                                     type="text"
                                     name="organizer"
                                     placeholder="organizer"
                                     className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
                                     value={formData.organizer}
                                     onChange={handleChange}
-                                    />
+                                />
                             </div>
                             <div className="flex flex-col w-full gap-3">
                                 <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Name</p>
-                                    <input
+                                <input
                                     type="text"
                                     name="name"
                                     placeholder="Name"
                                     className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
                                     value={formData.name}
                                     onChange={handleChange}
-                                    />
+                                />
                             </div>
                             <div className="flex flex-col w-full gap-3">
                                 <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Surname</p>
-                                    <input
+                                <input
                                     type="text"
                                     name="surname"
                                     placeholder="surname"
                                     className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
                                     value={formData.surname}
                                     onChange={handleChange}
-                                    />
+                                />
                             </div>
                             <div className="flex flex-col w-full gap-3">
                                 <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Country</p>
-                                    <input
+                                <input
                                     type="text"
                                     name="country"
                                     placeholder="country"
                                     className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
                                     value={formData.country}
                                     onChange={handleChange}
-                                    />
+                                />
                             </div>
                             <div className="flex flex-col w-full gap-3">
                                 <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">City</p>
-                                    <input
+                                <input
                                     type="text"
                                     name="city"
                                     placeholder="city"
                                     className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
                                     value={formData.city}
                                     onChange={handleChange}
-                                    />
+                                />
                             </div>
                             <div className="flex flex-col w-full gap-3">
                                 <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Telegram</p>
-                                    <input
+                                <input
                                     type="text"
                                     name="telegram"
                                     placeholder="Telegram"
                                     className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
                                     value={formData.telegram}
                                     onChange={handleChange}
-                                    />
+                                />
                             </div>
                             <div className="flex flex-col w-full gap-3">
                                 <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Phone</p>
-                                    <input
+                                <input
                                     type="Phone"
                                     name="phone"
                                     placeholder="Phone"
                                     className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
                                     value={formData.phone}
                                     onChange={handleChange}
-                                    />
+                                />
                             </div>
                             <div className="flex flex-col w-full gap-3">
                                 <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Email</p>
-                                    <input
+                                <input
                                     type="Email"
                                     name="email"
                                     placeholder="Email"
                                     className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
                                     value={formData.email}
                                     onChange={handleChange}
-                                    />
+                                />
                             </div>
                             <div className="flex flex-col w-full gap-3">
                                 <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Wallet</p>
-                                    <input
+                                <input
                                     type="text"
                                     name="wallet"
                                     placeholder="Wallet"
                                     className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
                                     value={formData.wallet}
                                     onChange={handleChange}
-                                    />
+                                />
                             </div>
                             <div className="lg:col-start-1 lg:col-end-4 flex flex-col w-full gap-3">
                                 <p className="text-[18px] leading-[24px] font-Poppins text-whiteTextColor">Organizer id</p>
-                                    <input
+                                <input
                                     type="text"
                                     name="organizerId"
                                     placeholder="organizerId"
                                     className="h-12 w-full px-5 invert text-[#1b1b1b] text-[24px] leading-[24px] ring-2 ring-inset ring-[#a74282] items-center rounded-[12px] bg-transparent"
                                     value={formData.organizerId}
                                     onChange={handleChange}
-                                    />
+                                />
                             </div>
                         </div>
                     </div>
@@ -300,7 +297,7 @@ const Addorganizer: React.FC = () =>  {
                                     </select>
                                     <div className="absolute pt-10 h-full pointer-events-none inset-y-0 right-0 flex items-center px-2 text-gray-700">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2071 9.79289C15.8166 9.40237 15.1834 9.40237 14.7929 9.79289L12 12.5858L9.20711 9.79289C8.81658 9.40237 8.18342 9.40237 7.79289 9.79289C7.40237 10.1834 7.40237 10.8166 7.79289 11.2071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L16.2071 11.2071C16.5976 10.8166 16.5976 10.1834 16.2071 9.79289Z" fill="#FCFCFD"/>
+                                        <path fillRule="evenodd" clipRule="evenodd" d="M16.2071 9.79289C15.8166 9.40237 15.1834 9.40237 14.7929 9.79289L12 12.5858L9.20711 9.79289C8.81658 9.40237 8.18342 9.40237 7.79289 9.79289C7.40237 10.1834 7.40237 10.8166 7.79289 11.2071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L16.2071 11.2071C16.5976 10.8166 16.5976 10.1834 16.2071 9.79289Z" fill="#FCFCFD"/>
                                         </svg>
                                     </div>
                                 </div>
@@ -312,7 +309,7 @@ const Addorganizer: React.FC = () =>  {
                                     </select>
                                     <div className="absolute pt-10 h-full pointer-events-none inset-y-0 right-0 flex items-center px-2 text-gray-700">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2071 9.79289C15.8166 9.40237 15.1834 9.40237 14.7929 9.79289L12 12.5858L9.20711 9.79289C8.81658 9.40237 8.18342 9.40237 7.79289 9.79289C7.40237 10.1834 7.40237 10.8166 7.79289 11.2071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L16.2071 11.2071C16.5976 10.8166 16.5976 10.1834 16.2071 9.79289Z" fill="#FCFCFD"/>
+                                        <path fillRule="evenodd" clipRule="evenodd" d="M16.2071 9.79289C15.8166 9.40237 15.1834 9.40237 14.7929 9.79289L12 12.5858L9.20711 9.79289C8.81658 9.40237 8.18342 9.40237 7.79289 9.79289C7.40237 10.1834 7.40237 10.8166 7.79289 11.2071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L16.2071 11.2071C16.5976 10.8166 16.5976 10.1834 16.2071 9.79289Z" fill="#FCFCFD"/>
                                         </svg>
                                     </div>
                                 </div>
@@ -324,7 +321,7 @@ const Addorganizer: React.FC = () =>  {
                                     </select>
                                     <div className="absolute pt-10 h-full pointer-events-none inset-y-0 right-0 flex items-center px-2 text-gray-700">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2071 9.79289C15.8166 9.40237 15.1834 9.40237 14.7929 9.79289L12 12.5858L9.20711 9.79289C8.81658 9.40237 8.18342 9.40237 7.79289 9.79289C7.40237 10.1834 7.40237 10.8166 7.79289 11.2071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L16.2071 11.2071C16.5976 10.8166 16.5976 10.1834 16.2071 9.79289Z" fill="#FCFCFD"/>
+                                        <path fillRule="evenodd" clipRule="evenodd" d="M16.2071 9.79289C15.8166 9.40237 15.1834 9.40237 14.7929 9.79289L12 12.5858L9.20711 9.79289C8.81658 9.40237 8.18342 9.40237 7.79289 9.79289C7.40237 10.1834 7.40237 10.8166 7.79289 11.2071L11.2929 14.7071C11.6834 15.0976 12.3166 15.0976 12.7071 14.7071L16.2071 11.2071C16.5976 10.8166 16.5976 10.1834 16.2071 9.79289Z" fill="#FCFCFD"/>
                                         </svg>
                                     </div>
                                 </div>
