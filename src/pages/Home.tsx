@@ -19,11 +19,10 @@ const Home = () => {
 
     return (
         <>
-            {/* <Header/> */}
-            <BackHeader/>
-            <Eventlistbar />    
+            <BackHeader />
+            <Eventlistbar />
             <Eventlist />
-            <Footer/>
+            <Footer />
         </>
     )
 }

@@ -32,8 +32,8 @@ const Eventlist = () => {
         <div className="w-full flex flex-col text-[#777E90] lg:px-40 md:px-[39px] my-2">
             {isVisible && (
                 <div className="w-full flex py-4">
-                    <div className="flex flex-row w-full bg-darkgrayBackgroundColor md:rounded-full lg:rounded-full py-3 pl-[65px] pr-2 justify-between items-center">
-                        <p className="text-white font-Poppins my-auto text-base">
+                    <div className="flex flex-row w-full bg-darkgrayBackgroundColor rounded-xl md:rounded-full px-8 p-2 justify-between items-center">
+                        <p className="text-white font-Poppins text-base">
                             Buy $VALT → Get a free event invite → Use $VALT for your own entertainment at events or sell it on CEX/DEX (coming soon)
                         </p>
                         <button className="flex-none w-10 h-10 px-auto items-center py-auto rounded-full ring-2 ring-outset ring-current" onClick={handleButtonClick}>
