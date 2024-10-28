@@ -20,8 +20,8 @@ const Purchase = () => {
         };
     }, []);
     async function getCard() {
-        // const response = await axios.get(`http://srv625873.hstgr.cloud:5000/getevent/${id}`).then((res)=>{
-        const response = await axios.get(`http://srv625873.hstgr.cloud:5000/getevent/${id}`).then((res) => {
+        // const response = await axios.get(`https://srv625873.hstgr.cloud:5000/getevent/${id}`).then((res)=>{
+        const response = await axios.get(`https://srv625873.hstgr.cloud:5000/getevent/${id}`).then((res) => {
             setData(res.data);
         })
         console.log(response)
