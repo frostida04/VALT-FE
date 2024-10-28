@@ -9,8 +9,8 @@ const Reportcontent = () => {
 
     const [data, setData] = useState([]);
     async function getAllCard() {
-        // const response = await axios.get("https://srv625873.hstgr.cloud:5000/getorganizer").then((res)=>{
-        const response = await axios.get("https://srv625873.hstgr.cloud:5000/getorganizer").then((res) => {
+        // const response = await axios.get("https://valt-be.onrender.com/getorganizer").then((res)=>{
+        const response = await axios.get("https://valt-be.onrender.com/getorganizer").then((res) => {
             setData(res.data);
         })
         console.log(response);

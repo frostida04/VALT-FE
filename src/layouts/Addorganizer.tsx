@@ -66,8 +66,8 @@ const Addorganizer: React.FC = () => {
         // }
 
         try {
-            const res = await axios.post("https://srv625873.hstgr.cloud:5000/addorganizer", newEvent);
-            //const res = await axios.post("https://srv625873.hstgr.cloud:5000/addorganizer", newEvent);
+            const res = await axios.post("https://valt-be.onrender.com/addorganizer", newEvent);
+            //const res = await axios.post("https://valt-be.onrender.com/addorganizer", newEvent);
             console.log(res);
             alert("Post has been Added successfully");
             navigate("/Admin")
