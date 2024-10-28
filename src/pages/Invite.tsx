@@ -6,12 +6,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 
-
 const Invite = () => {
     const { id } = useParams();
     const [data, setData] = useState([]);
     async function getCard() {
-        const response = await axios.get(`http://srv625873.hstgr.cloud:5000/getevent/${id}`).then((res) => {
+        const response = await axios.get(`https://srv625873.hstgr.cloud:5000/getevent/${id}`).then((res) => {
             setData(res.data);
         })
         console.log(response)

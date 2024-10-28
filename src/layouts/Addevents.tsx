@@ -100,8 +100,8 @@ const Addevents: React.FC = () => {
         // }
 
         try {
-            const res = await axios.post("http://srv625873.hstgr.cloud:5000/addevent", newEvent);
-            // const res = await axios.post("http://srv625873.hstgr.cloud:5000/addevent", newEvent);
+            const res = await axios.post("https://srv625873.hstgr.cloud:5000/addevent", newEvent);
+            // const res = await axios.post("https://srv625873.hstgr.cloud:5000/addevent", newEvent);
             console.log(res);
             alert("Post has been Added successfully");
             navigate("/")
