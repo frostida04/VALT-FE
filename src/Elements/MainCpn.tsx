@@ -23,6 +23,7 @@ const MainCpn = ({ gen_invvalt, vip_invvalt, vipb_invvalt }: any) => {
 
     const [ticketValue, setTicketValue] = useState(500);
     const [ticketCnt, setTicketCnt] = useState(1);
+    const [selectedTicket, setSelectedTicket] = useState(1);
 
     useEffect(() => {
         setTicketValue(gen_invvalt);
@@ -89,45 +90,41 @@ const MainCpn = ({ gen_invvalt, vip_invvalt, vipb_invvalt }: any) => {
             <div className="flex w-full">
                 <div className="py-2 md:px-44 sm:px-2 flex flex-row justify-between items-center gap-6 sm:flex-col lg:flex-row  md:flex-col md:w-full w-full overflow-x-hidde sm:min-w-[200px] ">
                     <button className={`relative w-[256px] md:w-full md:min-w-[256px] sm:w-full gap-3 h-[462px] bg-darkgrayBackgroundColor rounded-3xl flex items-center  flex-col p-6
-                    hover:bg-[#252b3b] active:bg-[#232e3b] focus:outline-none ring-greenColor ${ticketValue === gen_invvalt && 'ring'} `} onClick={() => setTicketValue(gen_invvalt)}>
+                    hover:bg-[#252b3b] active:bg-[#232e3b] focus:outline-none ring-greenColor ${selectedTicket === 1 && 'ring'} `} onClick={() => { setTicketValue(vipb_invvalt); setSelectedTicket(1); }}>
                         <img src="/assets/img/general_entrance.png" className="w-[48px] h-[48px]"></img>
                         <p className="text-[24px] leading-[30px] font-semibold text-whiteTextColor">General</p>
                         <p className="text-[24px] leading-[30px] font-semibold text-whiteTextColor">entrance</p>
-
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">All options included in</p>
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">the STANDARD ticket</p>
-
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Lunch box (2 days)</p>
-
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Video recordings of speeches</p>
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">(Uminers and KuCoin stages)</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Included</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">Sunset Chill DJ set</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Snacks</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Drinks(Alc/nAld)</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">Networking</p>
                         <div className="absolute bottom-[20px] text-[26px] leading-[24px] font-semibold text-greenColor">{gen_invvalt}</div>
                     </button>
 
                     <button className={`relative w-[256px] md:w-full md:min-w-[256px] sm:w-full gap-3 h-[462px] bg-darkgrayBackgroundColor rounded-3xl flex items-center  flex-col p-6
-                    hover:bg-[#252b3b] active:bg-[#232e3b] focus:outline-none ring-greenColor ${ticketValue === vip_invvalt && 'ring'} `} onClick={() => setTicketValue(vip_invvalt)}>
+                    hover:bg-[#252b3b] active:bg-[#232e3b] focus:outline-none ring-greenColor ${selectedTicket === 2 && 'ring'} `} onClick={() => { setTicketValue(vipb_invvalt); setSelectedTicket(2); }}>
                         <img src="/assets/img/vip_icon.png" className="w-[48px] h-[48px]"></img>
                         <p className="text-[24px] leading-[30px] font-semibold text-whiteTextColor">VIP entrance</p>
                         <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">VIP entrance</p>
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">All options included in</p>
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">the STANDARD ticket</p>
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Lunch box (2 days)</p>
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Video recordings of speeches</p>
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">(Uminers and KuCoin stages)</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Included</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">Sunset Chill DJ set</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Snacks</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Drinks(Alc/nAld)</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">Networking</p>
                         <div className="absolute bottom-[20px] text-[26px] leading-[24px] font-semibold text-greenColor">{vip_invvalt}</div>
                     </button>
 
                     <button className={`relative w-[256px] md:w-full md:min-w-[256px] sm:w-full gap-3 h-[462px] bg-darkgrayBackgroundColor rounded-3xl flex items-center  flex-col p-6
-                    hover:bg-[#252b3b] active:bg-[#232e3b] focus:outline-none ring-greenColor ${ticketValue === vipb_invvalt && 'ring'} `} onClick={() => setTicketValue(vipb_invvalt)}>
+                    hover:bg-[#252b3b] active:bg-[#232e3b] focus:outline-none ring-greenColor ${selectedTicket === 3 && 'ring'} `} onClick={() => { setTicketValue(vipb_invvalt); setSelectedTicket(3); }}>
                         <img src="/assets/img/vip_icon2.png" className="w-[48px] h-[48px]"></img>
                         <p className="text-[24px] leading-[30px] font-semibold text-whiteTextColor">VIP entrance</p>
                         <p className="text-[24px] leading-[30px] font-semibold text-whiteTextColor">(BULL)</p>
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">VIP entrance (BULL)</p>
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">All options included in</p>
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">the STANDARD ticket</p>
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Lunch box (2 days)</p>
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Video recordings of speeches</p>
-                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">(Uminers and KuCoin stages)</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Included</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">Sunset Chill DJ set</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Snacks</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor pt-2">Drinks(Alc/nAld)</p>
+                        <p className="text-[14px] leading-[20px] font-normal text-whiteTextColor">Networking</p>
                         <div className="absolute bottom-[20px] text-[26px] leading-[24px] font-semibold text-greenColor">{vipb_invvalt}
                             <span className="text-whiteTextColor"> × 2</span>
                         </div>
