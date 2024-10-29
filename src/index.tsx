@@ -2,6 +2,7 @@
 import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Buffer } from 'buffer';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { WagmiProvider } from 'wagmi';
@@ -14,6 +15,7 @@ const root = ReactDOM.createRoot(
 );
 
 const queryClient = new QueryClient();
+window.Buffer = Buffer;
 
 root.render(
   <React.StrictMode>
