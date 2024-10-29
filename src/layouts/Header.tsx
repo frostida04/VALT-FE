@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -45,11 +44,13 @@ const Header = () => {
                     </div>
 
                 </div>
-                <div className="pr-5"><div className=" h-10 items-center justify-center  md:hidden sm:hidden"><ConnectButton /></div></div>
+                <div className="pr-5"><div className=" h-10 items-center justify-center  md:hidden sm:hidden">                        <w3m-button />
+                </div></div>
                 <div className="hidden sm:block w-[21.3px] h-[10.6px] border-y-2 border-grayBackgroundColor  flex-shrink-0 "></div>
             </div>
             <div className="flex flex-row gap-9 mt-5 px-8 text-white float-right">
-                <div className="pr-16"><div className=" h-10 items-center justify-center lg:hidden"><ConnectButton /></div></div>
+                <div className="pr-16"><div className=" h-10 items-center justify-center lg:hidden">                        <w3m-button />
+                </div></div>
             </div>
         </>
     )
