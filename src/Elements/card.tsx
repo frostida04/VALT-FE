@@ -1,16 +1,16 @@
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import dateFormat from 'dateformat';
 
 export default function Card({ _id, eventname, country, city, www, date, offerdate, type, On_offline, gen_invvalt }: any) {
 
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const handleClick = () => {
-        navigate(`/detail/${_id}`);
+        router.push(`/detail/${_id}`);
     };
     return (
         <div className='flex w-full'>
-            <button className="w-full justify-normal items-start my-4 rounded-3xl focus:outline-none focus:ring focus:ring-greenColor" onClick={handleClick}>
+            <div className="w-full justify-normal items-start my-4 rounded-3xl focus:outline-none focus:ring focus:ring-greenColor cursor-pointer" onClick={handleClick}>
                 <div className="w-full sm:px-[16px] flex md:flex-col sm:flex-col p-6 gap-x-8 sm:gap-y-8 rounded-3xl bg-darkgrayBackgroundColor justify-between 
                 hover:bg-[#252b3b] active:bg-[#232e3b] ">
                     <div className="flex md:flex-row sm:flex-col gap-x-8 sm:gap-y-8">
@@ -38,7 +38,7 @@ export default function Card({ _id, eventname, country, city, www, date, offerda
                         </div>
                     </button>
                 </div>
-            </button>
+            </div>
         </div>
     )
 }

@@ -1,15 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'next/navigation';
 import { VALT_Token_Address } from "../utils";
 import { useAccount, useBalance, useWriteContract } from 'wagmi';
-
-import BINANCE_PRESALE_CONTRACT_ABI from "../utils/binanceABI.json";
-import BINANCE_USDT_CONTRACT_ABI from "../utils/bep20.json";
-import { BINANCE_VALT_CONTRACT_ADDRESS, USDT_ADDRESS_ON_BINANCE } from "../utils";
+import { useRouter } from 'next/navigation';
 
 const MainCpn = ({ gen_invvalt, vip_invvalt, vipb_invvalt }: any) => {
-    const navigate = useNavigate();
+    const router = useRouter();
     const { id } = useParams();
     const [valtBalance, setValtBalance] = useState<number>(0);
     const [needValt, setNeedValt] = useState<number>(100000);
@@ -73,7 +69,7 @@ const MainCpn = ({ gen_invvalt, vip_invvalt, vipb_invvalt }: any) => {
         //         console.log(error);
         //     }
         // } else
-        navigate(`/invite/${id}`);
+        router.push(`/invite/${id}`);
     };
 
     useEffect(() => {

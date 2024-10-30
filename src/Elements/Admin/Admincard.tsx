@@ -1,18 +1,18 @@
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Tooltip } from 'react-tooltip';
 // import { Tooltip, Button } from "@material-tailwind/react";
 
 const AdminCard = ({ _id, eventname, country, city, www, date, offerdate, type, On_offline, gen_invvalt }: any) => {
     const [isOpen, setIsOpen] = useState(false)
-    const navigate = useNavigate();
+    const router = useRouter();
     const handleClick = () => {
         // Navigate to "/about" when the button is clicked
-        //   navigate('/detail');
+        //   router.push('/detail');
     };
     const handletooltip = () => {
         // Navigate to "/about" when the button is clicked
-        //   navigate('/detail');
+        //   router.push('/detail');
         if (isOpen) setIsOpen(false);
         if (!isOpen) setIsOpen(true);
     };

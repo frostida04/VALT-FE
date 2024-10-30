@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 
 interface FormData {
@@ -31,7 +31,7 @@ const Addorganizer: React.FC = () => {
         organizerId: '23e4234e234234',
     });
 
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const handleChange = (e: any) => {
         const { name, value } = e.target;
@@ -67,15 +67,13 @@ const Addorganizer: React.FC = () => {
 
         try {
             const res = await axios.post("https://valt-be.onrender.com/addorganizer", newEvent);
-            //const res = await axios.post("https://valt-be.onrender.com/addorganizer", newEvent);
             console.log(res);
             alert("Post has been Added successfully");
-            navigate("/Admin")
-            // window.location.replace("http://localhost:8080/post/" + res.data._id);
+            router.push("/Admin")
         } catch (err) { }
     }
     const handleCancel = async (e: any) => {
-        navigate('/admin');
+        router.push('/admin');
     }
     //   const  handleInvitationChange = (index: number, field: keyof Invitation) => (event: ChangeEvent<HTMLInputElement>) => {
     //     // const newInvitations = formData.invitations.map((invitation, i) => {

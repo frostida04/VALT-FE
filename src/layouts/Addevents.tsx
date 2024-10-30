@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/navigation'
 
 interface FormData {
     eventName: string;
@@ -30,8 +30,6 @@ interface FormData {
     endOfOfferDate: string;
     endOfOfferTime: string;
 }
-
-
 
 const Addevents: React.FC = () => {
 
@@ -64,7 +62,7 @@ const Addevents: React.FC = () => {
         endOfOfferTime: '',
     });
 
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const handleChange = (e: any) => {
         const { name, value } = e.target;
@@ -80,7 +78,6 @@ const Addevents: React.FC = () => {
     function handleFileChange(e: any) {
         console.log(e.target.files);
         // setFile(URL.createObjectURL(e.target.files[0]));
-
     }
 
     const handleSubmit = async (e: any) => {
@@ -101,15 +98,14 @@ const Addevents: React.FC = () => {
 
         try {
             const res = await axios.post("https://valt-be.onrender.com/addevent", newEvent);
-            // const res = await axios.post("https://valt-be.onrender.com/addevent", newEvent);
             console.log(res);
             alert("Post has been Added successfully");
-            navigate("/")
+            router.push("/")
             // window.location.replace("http://localhost:8080/post/" + res.data._id);
         } catch (err) { }
     }
     const handleCancel = async (e: any) => {
-        navigate('/');
+        router.push('/');
     }
     //   const  handleInvitationChange = (index: number, field: keyof Invitation) => (event: ChangeEvent<HTMLInputElement>) => {
     //     // const newInvitations = formData.invitations.map((invitation, i) => {
