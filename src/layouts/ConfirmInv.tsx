@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams } from "next/navigation";
 import {
     useWriteContract,
 } from "wagmi";
@@ -10,7 +10,7 @@ import BINANCE_USDT_CONTRACT_ABI from "../utils/bep20.json";
 import { TEST_VALT_TOKEN_ADDRESS, TEST_VALT_PRESALE_ADDRESS, TEST_USDT_TOKEN_ADDRESS } from "../utils";
 
 const ConfirmInv = ({ vipb_invnum, gen_invnum, vip_invnum }: any) => {
-    const navigate = useNavigate();
+    const router = useRouter();
     const { id } = useParams();
     const [inputValue, setInputValue] = useState('');
 
@@ -29,7 +29,7 @@ const ConfirmInv = ({ vipb_invnum, gen_invnum, vip_invnum }: any) => {
                     functionName: "buyTokenWithUSDT",
                     args: [5 * 10 ** 6],
                 }).then(() => {
-                    navigate(`/purchase/${id}`);
+                    router.push(`/purchase/${id}`);
                 }).catch((error: any) => {
                     console.log(error);
                 });
@@ -41,7 +41,7 @@ const ConfirmInv = ({ vipb_invnum, gen_invnum, vip_invnum }: any) => {
         }
     };
     const handlemainpage = () => {
-        navigate('/');
+        router.push('/');
     };
 
     const handleChange = (event: any) => {

@@ -1,21 +1,19 @@
 import Pchase_Con from "../Elements/Pchase_Con";
+import { useParams } from 'next/navigation';
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from 'react-router-dom';
-
-
 
 const CompltPch = () => {
     const { id } = useParams();
     const [data, setData] = useState([]);
-    async function getCard() {
-        // const response = await axios.get(`https://valt-be.onrender.com/getevent/${id}`).then((res)=>{
-        const response = await axios.get(`https://valt-be.onrender.com/getevent/${id}`).then((res) => {
-            setData(res.data);
-        })
-        console.log(response)
-    }
     useEffect(() => {
+        async function getCard() {
+            const response = await axios.get(`https://valt-be.onrender.com/getevent/${id}`).then((res) => {
+                setData(res.data);
+            }).catch((error) => {
+                console.log(error);
+            })
+        }
         getCard();
     }, [])
     return (

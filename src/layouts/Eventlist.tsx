@@ -1,25 +1,26 @@
 
-import { Link } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import Cards from "../Elements/Cardlist"
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import axios from "axios";
 
 const Eventlist = () => {
 
-    const navigate = useNavigate();
+    const router = useRouter();
     const [isVisible, setIsVisible] = useState(true);
     const handleClick = () => {
         // Navigate to "/about" when the button is clicked
-        navigate('/detail');
+        router.push('/detail');
     };
 
     const [data, setData] = useState([]);
     async function getAllCard() {
-        const response = await axios.get("https://valt-be.onrender.com/getallevent").then((res) => {
+        axios.get("https://valt-be.onrender.com/getallevent").then((res) => {
             setData(res.data);
+        }).catch((error) => {
+            console.log(error);
         })
-        console.log(response)
+
     }
     useEffect(() => {
         getAllCard();

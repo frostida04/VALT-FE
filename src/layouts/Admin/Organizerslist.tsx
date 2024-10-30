@@ -1,19 +1,18 @@
-import { Link } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import OrgCardsset from "../../Elements/Admin/OrgCardsset"
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import axios from "axios";
 const Organizerslist = () => {
-    const navigate = useNavigate();
+    const router = useRouter();
     const [isVisible, setIsVisible] = useState(true);
 
     const [data, setData] = useState([]);
     async function getAllCard() {
-        // const response = await axios.get("https://valt-be.onrender.com/getorganizer").then((res)=>{
         const response = await axios.get("https://valt-be.onrender.com/getorganizer").then((res) => {
             setData(res.data);
+        }).catch((error) => {
+            console.log(error);
         })
-        console.log(response);
     }
     useEffect(() => {
         getAllCard();

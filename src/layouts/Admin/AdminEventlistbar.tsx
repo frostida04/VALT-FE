@@ -1,23 +1,20 @@
 
-import { Link } from "react-router-dom"
-import { Label, Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
-import React, { useState, ChangeEvent, FormEvent } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { ChangeEvent } from 'react';
+import { useRouter } from 'next/navigation';
 
 const AdminEventlistbar = () => {
-    const navigate = useNavigate();
+    const router = useRouter();
     const Eventbutton1 = () => {
         // Navigate to "/about" when the button is clicked
-        navigate('/admin');
+        router.push('/admin');
     };
     const Organizersbutton1 = () => {
         // Navigate to "/about" when the button is clicked
-        navigate('/admin/organizer');
+        router.push('/admin/organizer');
     };
     const Reportbutton1 = () => {
         // Navigate to "/about" when the button is clicked
-        navigate('/admin/report');
+        router.push('/admin/report');
     };
     const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = event.target;

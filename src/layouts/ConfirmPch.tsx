@@ -1,16 +1,15 @@
 import Pchase_Con from "../Elements/Pchase_Con";
-import { useNavigate } from 'react-router-dom';
+import { useRouter, useParams } from 'next/navigation';
 import { useState } from "react";
 import axios from "axios";
-import { useParams } from 'react-router-dom';
 import { useEffect } from 'react'
 
 const ConfirmInv = ({ gen_invnum }: any) => {
-    const navigate = useNavigate();
+    const router = useRouter();
     const { id } = useParams();
     const [data, setData] = useState([]);
     const handleClick = () => {
-        navigate(`/complete/${id}`);
+        router.push(`/complete/${id}`);
     };
     const [inputValue, setInputValue] = useState('');
 
@@ -22,13 +21,14 @@ const ConfirmInv = ({ gen_invnum }: any) => {
             setInputValue(value);
         }
     };
-    async function getCard() {
-        const response = await axios.get(`https://valt-be.onrender.com/getevent/${id}`).then((res) => {
-            setData(res.data);
-        })
-        console.log(response)
-    }
     useEffect(() => {
+        async function getCard() {
+            const response = await axios.get(`https://valt-be.onrender.com/getevent/${id}`).then((res) => {
+                setData(res.data);
+            }).catch((error) => {
+                console.log(error);
+            })
+        }
         getCard();
     }, [])
     return (

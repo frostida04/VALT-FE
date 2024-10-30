@@ -1,18 +1,18 @@
 "use client"
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6"
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 const AdminFooter = () => {
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const Addeventbutton = () => {
         // Navigate to "/about" when the button is clicked
-        navigate('/admin/addevent');
+        router.push('/admin/addevent');
     };
     const handlechangehome = () => {
         // Navigate to "/about" when the button is clicked
-        navigate('/admin');
+        router.push('/admin');
     };
     return (
         <div className="w-full flex flex-col">

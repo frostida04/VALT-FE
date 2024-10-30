@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Tooltip } from "react-tooltip";
 
@@ -16,15 +16,15 @@ const OrgCards = ({
   gen_invvalt,
 }: any) => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
+  const router = useRouter();
   const [isEnabled, setIsEnabled] = useState(true);
   const handleClick = () => {
     // Navigate to "/about" when the button is clicked
-    //   navigate('/detail');
+    //   router.push('/detail');
   };
   const handletooltip = () => {
     // Navigate to "/about" when the button is clicked
-    //   navigate('/detail');
+    //   router.push('/detail');
     if (isOpen) setIsOpen(false);
     if (!isOpen) setIsOpen(true);
   };
@@ -52,17 +52,15 @@ const OrgCards = ({
                 onClick={() => setIsEnabled(!isEnabled)}
                 className={`
                                 relative inline-flex w-12 h-6 rounded-full transition-colors duration-200 ease-in-out
-                                ${
-                                  isEnabled ? "bg-greenColor" : "bg-gray-300"
-                                } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-greenColor`}
+                                ${isEnabled ? "bg-greenColor" : "bg-gray-300"
+                  } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-greenColor`}
               >
                 <span
                   className={`inline-block mt-[3.3px] w-[17px] h-[17px] rounded-full bg-white transform transition-transform duration-200 ease-in-out items-center
-                                    ${
-                                      isEnabled
-                                        ? "translate-x-7"
-                                        : "translate-x-1"
-                                    }
+                                    ${isEnabled
+                      ? "translate-x-7"
+                      : "translate-x-1"
+                    }
                                     shadow-sm
                                 `}
                 />
